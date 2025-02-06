@@ -1,0 +1,32 @@
+title & logo, hr underneath
+
+    main container
+        price & pic area (top half)
+        search and item name (bottom half)
+
+    colors at bottom (change on click)
+
+// 
+
+item id
+need 2 get image url based on item id
+
+fix gaps between items in main container
+
+1/16 
+    need to fix footer right
+        need to make buttons on footer clear and just show text, but have them for accessibility
+
+    need to work on apis to fetch placeholders for searchbox.
+        possibly fetch data, retrieve 10 random items and display them when bar is clicked. when item is clicked from bar or typed. icon image will be fetched. and name / description. along with its ge price in the top left.
+
+1/20
+    use the website article listed : https://www.reddit.com/r/OSRSflipping/comments/1bvvp65/data_analytics_and_ge_reporting_strategies_using/
+    this is for help with apis
+
+1/28
+    consider uploading to github or keeping file on docs for laptop.
+    work on rest of api
+        start working on funtionality
+        read helper.txt
+    parse osrs python
