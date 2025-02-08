@@ -3,6 +3,7 @@ import './App.css'
 import MainContainer from './components/MainContainer'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import BottomImage from './components/BottomImage'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <div className='app-top-container'>
         <Header />
         <MainContainer />
+        <BottomImage />
       </div>
       <Footer />
     </div>
