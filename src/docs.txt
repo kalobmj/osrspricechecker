@@ -30,3 +30,7 @@ fix gaps between items in main container
         start working on funtionality
         read helper.txt
     parse osrs python
+
+2/8
+    got bottom pics working just need to do css styling for it, also css styling throughout the entire page
+        need to work on working with api and making search function

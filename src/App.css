@@ -107,6 +107,11 @@ hr {
 
 }
 
+.bottom-image {
+  max-width: 480px;
+  max-height: 270px;
+}
+
 .footer-container {
 
   display: flex;
