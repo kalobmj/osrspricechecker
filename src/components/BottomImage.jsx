@@ -31,7 +31,7 @@ export default function BottomImage() {
             <img
                 className='bottom-image'
                 src={bottomImageURL} 
-                alt='bottom-img' 
+                alt='bottom-img art-by-Soff(Chili)' 
                 onClick={handleBottomImageChange}
             />
         </div>

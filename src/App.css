@@ -12,42 +12,6 @@
   min-height: 90vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
 .rs-logo {
 
   height: 100px;
@@ -56,49 +20,91 @@
 
 }
 
-.item-display-area {
 
-  border: 1px solid burlywood;
-
-}
-
-.item-icon {
-  height: 50px;
-  width: 50px;
-}
 
 hr {
-
+  
   height: 2px;
   width: 50%;
   margin: auto !important;
+  
+}
 
+.price-display-area h3.price {
+  font-size: 40px;
+  padding-right: 50px;
 }
 
 .main-container {
   border: 1px solid burlywood;
+  border-radius: 25px;
   margin-top: 20px;
   padding: 20px;
+  min-height: 250px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  /* align-items: center; */
 }
+
+/* .top-half {
+  
+display: grid;
+grid-template-rows: 1fr;
+grid-template-columns: 1fr 1fr;
+gap: 75px;
+height: 100%;
+width: 100%;
+justify-content: space-between;
+align-items: center;
+
+} */
 
 .top-half {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
 
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr;
-  gap: 75px;
-  height: 100%;
+.item-display-area {
+
+  border: 1px solid burlywood;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
-.bottom-half {
+.item-icon {
+  height: 70px;
+  width: 70px;
+  margin: 10px;
+  /* height: 100%;
+  width: 100%: */
+}
 
+/* .bottom-half {
+  
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
   gap: 100px;
   height: 100%;
 
+} */
+
+.bottom-half {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  gap: 100px;
+}
+
+.item-name {
+  font-size: 25px;
 }
 
 #search {
@@ -110,6 +116,7 @@ hr {
 .bottom-image {
   max-width: 480px;
   max-height: 270px;
+  margin: 20px;
 }
 
 .footer-container {

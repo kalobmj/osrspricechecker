@@ -34,3 +34,9 @@ fix gaps between items in main container
 2/8
     got bottom pics working just need to do css styling for it, also css styling throughout the entire page
         need to work on working with api and making search function
+
+2/9
+    change color of price based on how much it is
+    work on three color scheme themes
+    
+    
