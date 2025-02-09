@@ -5,6 +5,25 @@
   text-align: center;
 }
 
+body {
+  /* background-color: rgb(255, 147, 5) !important; */
+
+  background-image: url('../src/images/dragonSlayer2Full.jpg');
+
+  min-height: 100vh;
+  /* background-size: 60% 60%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+}
+
+/* style search bar border radius */
+/* .search-bar {
+  border-radius: px;
+} */
+
 .app-div {
   display: flex;
   flex-direction: column;
@@ -37,14 +56,38 @@ hr {
 
 .main-container {
   border: 1px solid burlywood;
-  border-radius: 25px;
-  margin-top: 20px;
+  background-color: rgb(233, 222, 207);
+  border-radius: 29px;
+  margin: 16px;
   padding: 20px;
   min-height: 250px;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   /* align-items: center; */
+}
+
+/* background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
+                  url("../../media/examples/lizard.png"); */
+
+.main-container-underlay {
+
+  border: 1px solid brown;
+  border-radius: 40px;
+  margin-top: 20px;
+  /* background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
+                  url("../../media/examples/lizard.png"); */
+  /* background-image: url('../src/images/AGS.webp'); */
+  /* background: cadetblue; */
+  /* background-repeat: repeat;
+  background-size: 50px 50px; */
+
+  background: 
+    url('../src/images/AGS.webp'),
+    linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5));
+    background-size: 50px 50px, auto;
+    background-repeat: repeat, no-repeat;
+
 }
 
 /* .top-half {
