@@ -58,7 +58,10 @@ export default function MainContainer() {
     return (
         <div 
             className='main-container-underlay' 
-            // style={{ backgroundImage: AGS }}
+                // inline underlay styling will go here, background mini icons will change dynamically based on state. the state containing all of the divs (background) properties will go here. refer to css styling
+            // style={{
+                
+            // }}
             >
             <div className='main-container'>
                 <div className='top-half'>
