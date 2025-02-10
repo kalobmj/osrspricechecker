@@ -33,15 +33,15 @@ function App() {
 
   console.log('this should be ags url', underlayImages[0].url)
   console.log('this should be whip url', underlayImages[1].url)
-  console.log('this should be dds url', underlayImages[2].url)
-  console.log('this should be santa url', underlayImages[3].url)
+  console.log('this should be santa url', underlayImages[2].url)
+  console.log('this should be dds url', underlayImages[3].url)
 
   console.log('dds url', underlayImages[2]?.url)
 
   // styling object set to default of ags and yellow blue gradient
   const [underlayStyles, setUnderlayStyles] = useState({
 
-    background: `url(${underlayImages[2].url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`,
+    background: `url(${underlayImages[0].url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`,
     backgroundSize: '50px 50px, auto',
     backgroundRepeat: 'repeat, no-repeat'
 
@@ -50,9 +50,16 @@ function App() {
   // user picking different colors will trigger setUnderlayStyles, and depending on the param passed will handle the changing of each style property
   const changeUnderlayBackground = (colorScheme) => {
 
+    console.log('color sheme', colorScheme)
+    console.log([underlayImages.find(item => item.id === colorScheme.id)])
+
+    underlayImages.forEach(image => console.log(image.id))
+
     setUnderlayStyles(prevUnderlayStyles => ({
       ...prevUnderlayStyles,
-      background: `url(${underlayImages.find(item => item.id === colorScheme).url})`
+      backgroundImage: `url(${underlayImages.find(item => item.id === colorScheme.id).url})`,
+      backgroundRepeat: 'repeat',
+      backgroundSize: '50px 50px'
     }))
 
   };

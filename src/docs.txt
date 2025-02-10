@@ -49,3 +49,6 @@ fix gaps between items in main container
         ags too, with same yellow blue gradient for arma colors
     consider having a different background with each color option
         have these different background and body backgrounds stored in state that styles inline style={{}}
+
+2/10
+    got underlay background changing, just need to work on the linear gradients. and pass them into each colorway button 1-3
