@@ -1,6 +1,9 @@
 import React from "react";
 
-export default function Footer() {
+export default function Footer({ underlayStyles, changeUnderlayBackground }) {
+
+    // should console a function that we passed
+    // console.log(changeUnderlayBackground);
 
     const checkOnClick = (event) => {
 

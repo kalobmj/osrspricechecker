@@ -2,10 +2,10 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import AGS from '../images/AGS.webp'
 
-export default function MainContainer() {
+export default function MainContainer({ underlayStyles, changeUnderlayBackground }) {
 
     // const [itemPriceData, setData] = useState(null);
-
+    
     // api testing
     const myStatsURL = 'https://secure.runescape.com/m=hiscore_oldschool/index_lite.json?player=skullkepr94';
 
@@ -53,34 +53,13 @@ export default function MainContainer() {
         }
     }, [])
 
-    // styling object set to default of ags and yellow blue gradient
-    const [underlayStyles, setUnderlayStyles] = useState({
 
-        background: `url(${AGS}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`,
-        backgroundSize: '50px 50px, auto',
-        backgroundRepeat: 'repeat, no-repeat'
-
-    });
-
-    // user picking different colors will trigger setUnderlayStyles, and depending on the param passed will handle the changing of each style property
-    const changeUnderlayBackground = (colorScheme) => {
-
-        
-
-    };
-
-        // check if object is set correctly
-    // setTimeout(() => {
-    //     console.log(underlayStyles)
-    // }, 5000);
 
     return (
         <div 
             className='main-container-underlay' 
                 // inline underlay styling will go here, background mini icons will change dynamically based on state. the state containing all of the divs (background) properties will go here. refer to css styling
-            // style={{
-                
-            // }}
+            style={underlayStyles}
             >
             <div className='main-container'>
                 <div className='top-half'>
