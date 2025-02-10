@@ -43,8 +43,9 @@ fix gaps between items in main container
         use runelite spotlight colors
     work on three color scheme themes
     have different colors use a different main container color scheme with repeating icon icons slanted in the underlay, ie whips
-        whips red brown linear gradient // diff patterns? slanted? swirls? 
-        dds red green linear gradient
-        santa hats white red linear gradient
+        1. whips red brown linear gradient // diff patterns? slanted? swirls? 
+        2. dds red green linear gradient
+        3. santa hats white red linear gradient
+        ags too, with same yellow blue gradient for arma colors
     consider having a different background with each color option
         have these different background and body backgrounds stored in state that styles inline style={{}}

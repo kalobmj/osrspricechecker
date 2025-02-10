@@ -53,7 +53,26 @@ export default function MainContainer() {
         }
     }, [])
 
+    // styling object set to default of ags and yellow blue gradient
+    const [underlayStyles, setUnderlayStyles] = useState({
 
+        background: `url(${AGS}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`,
+        backgroundSize: '50px 50px, auto',
+        backgroundRepeat: 'repeat, no-repeat'
+
+    });
+
+    // user picking different colors will trigger setUnderlayStyles, and depending on the param passed will handle the changing of each style property
+    const changeUnderlayBackground = (colorScheme) => {
+
+        
+
+    };
+
+        // check if object is set correctly
+    // setTimeout(() => {
+    //     console.log(underlayStyles)
+    // }, 5000);
 
     return (
         <div 
