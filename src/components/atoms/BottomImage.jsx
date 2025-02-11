@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { getRandomImage } from './utils/bottomImageLoader.js'
+import { getRandomImage } from '../../utils/bottomImageLoader';
 
 const BottomImage = () => {
     const [bottomImageURL, setBottomImageURL] = useState('');

@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 import MainContainer from './components/MainContainer'
-import Header from './components/atoms/Header'
-import Footer from './components/Footer'
 import BottomImage from './components/atoms/BottomImage'
+import Footer from './components/molecules/Footer'
+import MainHeader from './components/molecules/MainHeader'
 
 // import all backgroundImages
 const underlayModules = import.meta.glob('/src/assets/images/backgroundImages/**/*.{webp,png}', { eager: true });
@@ -78,7 +78,7 @@ function App() {
   return (
     <div className='app-div'>
       <div className='app-top-container'>
-        <Header />
+        <MainHeader />
         <MainContainer
           underlayStyles={underlayStyles}
           changeUnderlayBackground={changeUnderlayBackground}
