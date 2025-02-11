@@ -52,3 +52,6 @@ fix gaps between items in main container
 
 2/10
     got underlay background changing, just need to work on the linear gradients. and pass them into each colorway button 1-3
+
+2/11
+    need to fix folders

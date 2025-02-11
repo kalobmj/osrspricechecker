@@ -4,10 +4,10 @@ import MainContainer from './components/MainContainer'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import BottomImage from './components/BottomImage'
-import AGS from './images/AGS.webp'
+import AGS from './assets/images/AGS.webp'
 
 // import all backgroundImages
-const underlayModules = import.meta.glob('./images/backgroundImages/**/*.{webp,png}', { eager: true });
+const underlayModules = import.meta.glob('./assets/images/backgroundImages/**/*.{webp,png}', { eager: true });
 console.log(underlayModules);
 
 

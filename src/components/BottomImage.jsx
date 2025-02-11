@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import ancestralWoman2 from '../images/bottomImages/ancestralWoman2.jpg'
+import ancestralWoman2 from '../assets/images/bottomImages/ancestralWoman2.jpg'
 
 console.log(ancestralWoman2)
 

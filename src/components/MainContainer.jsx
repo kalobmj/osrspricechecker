@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import AGS from '../images/AGS.webp'
+import AGS from '../assets/images/AGS.webp'
 
 // 86400 seconds is 24 hours (reference for data grabbing)
 // urlprefix = 'https://prices.runescape.wiki/api/v1/osrs/'
