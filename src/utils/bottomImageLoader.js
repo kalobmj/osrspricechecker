@@ -1,16 +1,31 @@
+import { randomNumber } from "./randomNumber";
+
 // imports images from bottomImages folder
 // can write in functionality to support grabbing all images in the future
-
-const modules = import.meta.glob('/src/assets/images/bottomImages/**/*.jpg', { eager: true });
-
+// keep module variable the same. pass in parameters for the images source, and file types. use template literal
+// then take our fleshed out object to return a random image from that list
+// this can work for bottom image and game logo
 // src\assets\images\bottomImages
 
-const images = Object.values(modules).map((module) => module.default);
+// function to return random image
+export function getRandomImage(globCall) {
 
-console.log('modules', modules)
-console.log('loaded images', images)
+    // globString = url to pass as string
+    // fileType = file extensions to look for .{webp,jpg,png}
 
-export function getRandomImage() {
-    const randomNumber = Math.floor(Math.random() * images.length);
-    return images[randomNumber];
+    // entire string pattern for url is needed, template literals will not work.
+    
+    // import images from path based on the passed parameter
+    // const modules = import.meta.glob(globString, { eager: true });
+    
+    // map over our modules to create our own object
+    const images = Object.entries(globCall).map((module, index) => ({
+        id: index,
+        url: module.default
+    }));
+
+    // check our modules and objects are working correctly
+    console.log('our images object...', images);
+    
+    return images[randomNumber(globCall.length - 1, 0)];
 };

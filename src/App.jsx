@@ -6,7 +6,7 @@ import Footer from './components/molecules/Footer'
 import MainHeader from './components/molecules/MainHeader'
 
 // import all backgroundImages
-const underlayModules = import.meta.glob('/src/assets/images/backgroundImages/**/*.{webp,png}', { eager: true });
+const underlayModules = import.meta.glob('/src/assets/images/underlayImages/**/*.{webp,png}', { eager: true });
 console.log(underlayModules);
 
 

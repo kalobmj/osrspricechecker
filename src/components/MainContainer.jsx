@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import AGS from '../assets/images/AGS.webp'
+import ArmadylGodsword from '../assets/images/underlayImages/ArmadylGodsword.webp'
+
+// src\assets\images\underlayImages\ArmadylGodsword.webp
 
 // 86400 seconds is 24 hours (reference for data grabbing)
 // urlprefix = 'https://prices.runescape.wiki/api/v1/osrs/'
@@ -72,7 +74,7 @@ export default function MainContainer({ underlayStyles, changeUnderlayBackground
     }, [])
 
     // logic for colorway buttons will go here
-    
+
 
 
     return (
@@ -89,7 +91,7 @@ export default function MainContainer({ underlayStyles, changeUnderlayBackground
                     </div>
                     <div className='item-display-area'>
                         {/* image source will change here */}
-                        <img className='item-icon' alt='item-icon' src={AGS} />
+                        <img className='item-icon' alt='item-icon' src={ArmadylGodsword} />
                     </div>
                 </div>
                 <div className='bottom-half'>
