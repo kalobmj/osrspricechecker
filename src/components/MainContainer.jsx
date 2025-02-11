@@ -2,6 +2,24 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import AGS from '../images/AGS.webp'
 
+// 86400 seconds is 24 hours (reference for data grabbing)
+// urlprefix = 'https://prices.runescape.wiki/api/v1/osrs/'
+// ## the primary function of this script is to fetch historical market data from the OSRS Wiki API (https://oldschool.runescape.wiki/w/RuneScape:Real-time_Prices)
+
+// fetch('https://api.example.com/data',  {
+    // headers: {
+    //     'User-Agent': 'MyApp/1.0'
+    // }
+// });
+
+// axios.get('https://api.example.com/data', {
+//     headers: {
+//       'User-Agent': 'MyApp/1.0'
+//     }
+//   });
+
+
+
 export default function MainContainer({ underlayStyles, changeUnderlayBackground }) {
 
     // const [itemPriceData, setData] = useState(null);
