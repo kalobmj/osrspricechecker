@@ -156,6 +156,11 @@ align-items: center;
 
 }
 
+/* hides placeholder text on input when user clicks to search */
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
 .bottom-image {
   max-width: 480px;
   max-height: 270px;

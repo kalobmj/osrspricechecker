@@ -1,28 +1,19 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import ancestralWoman2 from '../assets/images/bottomImages/ancestralWoman2.jpg'
-
-console.log(ancestralWoman2)
-
-const modules = import.meta.glob('../images/bottomImages/**/*.jpg', { eager: true });
-console.log(modules)
-
-const images = Object.values(modules).map((module) => module.default);
-console.log('Loaded images', images);
-
-console.log(Object.entries(modules))
+import { getRandomImage } from './utils/imageLoader.js'
 
 export default function BottomImage() {
-    const handleBottomImageChange = () => {
-        const randomNumber = Math.floor(Math.random() * (images.length));
-        setBottomImageURL(images[randomNumber])
+    const [bottomImageURL, setBottomImageURL] = useState('');
+
+    // function for handling url state change
+    const handleImageChange = () => {
+        setBottomImageURL(getRandomImage)
     };
 
-    const [bottomImageURL, setBottomImageURL] = useState('');
-    
+    // useEffect on first render to display randomImage
     useEffect(() => {
-        handleBottomImageChange()
-    }, [])
+        handleImageChange();
+    }, []);
 
     return (
         <div
@@ -30,9 +21,9 @@ export default function BottomImage() {
         >
             <img
                 className='bottom-image'
-                src={bottomImageURL} 
-                alt='bottom-img art-by-Soff(Chili)' 
-                onClick={handleBottomImageChange}
+                src={bottomImageURL}
+                alt='bottom-img art-by-Soff(Chili)'
+                onClick={handleImageChange}
             />
         </div>
     )

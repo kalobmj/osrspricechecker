@@ -7,7 +7,7 @@ import BottomImage from './components/BottomImage'
 import AGS from './assets/images/AGS.webp'
 
 // import all backgroundImages
-const underlayModules = import.meta.glob('./assets/images/backgroundImages/**/*.{webp,png}', { eager: true });
+const underlayModules = import.meta.glob('/src/assets/images/backgroundImages/**/*.{webp,png}', { eager: true });
 console.log(underlayModules);
 
 
