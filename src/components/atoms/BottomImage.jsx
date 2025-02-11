@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { getRandomImage } from './utils/imageLoader.js'
+import { getRandomImage } from './utils/bottomImageLoader.js'
 
-export default function BottomImage() {
+const BottomImage = () => {
     const [bottomImageURL, setBottomImageURL] = useState('');
 
     // function for handling url state change
@@ -16,15 +16,15 @@ export default function BottomImage() {
     }, []);
 
     return (
-        <div
-            className='bottom-image-container'
-        >
+        <div className='bottom-image-container'>
             <img
                 className='bottom-image'
-                src={bottomImageURL}
+                src={bottomImageURL} 
                 alt='bottom-img art-by-Soff(Chili)'
-                onClick={handleImageChange}
+                onClick={handleImageChange} 
             />
         </div>
     )
 };
+
+export default BottomImage;

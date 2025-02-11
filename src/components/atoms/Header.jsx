@@ -2,7 +2,7 @@ import React from 'react'
 
 const MainHeader = () => {
     return (
-        <h1 className='main-header'>
+        <h1 className='header'>
             osrs price catcher
         </h1>
     )

@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 import MainContainer from './components/MainContainer'
-import Header from './components/Header'
+import Header from './components/atoms/Header'
 import Footer from './components/Footer'
-import BottomImage from './components/BottomImage'
-import AGS from './assets/images/AGS.webp'
+import BottomImage from './components/atoms/BottomImage'
 
 // import all backgroundImages
 const underlayModules = import.meta.glob('/src/assets/images/backgroundImages/**/*.{webp,png}', { eager: true });

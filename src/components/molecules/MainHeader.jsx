@@ -1,11 +1,11 @@
 import React from 'react'
-import GameLogo from './atoms/GameLogo'
-import MainHeader from './atoms/MainHeader'
+import GameLogo from '../atoms/GameLogo'
+import Header from '../atoms/Header'
 
 export default function Header() {
     return (
         <div className='header-container'>
-            <MainHeader />
+            <Header />
             <GameLogo />
             <hr />
         </div>
