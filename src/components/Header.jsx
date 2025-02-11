@@ -1,15 +1,13 @@
 import React from 'react'
-import rsLogo from '../assets/images/rsLogo.png'
-import rsLogo2 from '../assets/images/rsLogo2.png'
+import GameLogo from './atoms/GameLogo'
+import MainHeader from './atoms/MainHeader'
 
 export default function Header() {
     return (
         <div className='header-container'>
-            <h1>osrs price catcher</h1>
-            {/* rs logo */}
-            <img className='rs-logo' alt='RS logo' src={rsLogo} />
-            {/* <img className='rs-logo' alt='RS logo' src={rsLogo2} /> */}
+            <MainHeader />
+            <GameLogo />
             <hr />
         </div>
     )
-}
+};
