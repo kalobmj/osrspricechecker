@@ -1,6 +1,5 @@
 import React from 'react'
 import { getRandomImage } from '../../utils/bottomImageLoader'
-// import { randomNumber } from '../../utils/randomNumber';
 
 // importing all gameLogo images
 const gameLogoModules = import.meta.glob('/src/assets/images/gameLogos/**/*.png', { eager: true });

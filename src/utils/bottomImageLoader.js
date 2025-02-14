@@ -21,11 +21,14 @@ export function getRandomImage(globCall) {
     // map over our modules to create our own object
     const images = Object.entries(globCall).map((module, index) => ({
         id: index,
-        url: module.default
+        url: module[0]
     }));
 
     // check our modules and objects are working correctly
     console.log('our images object...', images);
+
+    console.log('our images length', Object.keys(images).length)
+    const ourRandomNumber = randomNumber(Object.keys(images).length)
     
     return images[randomNumber(globCall.length - 1, 0)];
 };
