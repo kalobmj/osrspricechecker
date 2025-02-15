@@ -27,15 +27,15 @@ export default function MainContainer({ underlayStyles, changeUnderlayBackground
     // const [itemPriceData, setData] = useState(null);
     
     // api testing
-    const myStatsURL = 'https://secure.runescape.com/m=hiscore_oldschool/index_lite.json?player=skullkepr94';
+    // const myStatsURL = 'https://secure.runescape.com/m=hiscore_oldschool/index_lite.json?player=skullkepr94';
 
-    // useEffect for fetching my player data
-    useEffect(() => {
-        fetch('http://localhost:5000/api/player/skullkepr94') // use template literal to change username
-            .then(res => res.json())
-            .then(data => console.log('my account data:', data))
-            .catch(err => console.error('Error fetching account data:', err))
-    }, [])
+    // // useEffect for fetching my player data
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/api/player/skullkepr94') // use template literal to change username
+    //         .then(res => res.json())
+    //         .then(data => console.log('my account data:', data))
+    //         .catch(err => console.error('Error fetching account data:', err))
+    // }, [])
 
     const [data, setData] = useState({
         'prices': null,

@@ -10,25 +10,16 @@ import { randomNumber } from "./randomNumber";
 // function to return random image
 export function getRandomImage(globCall) {
 
-    // globString = url to pass as string
-    // fileType = file extensions to look for .{webp,jpg,png}
+    // testing what is globcall, also test its type
+    console.log({globCall})
+    console.log('globcall type: ', typeof globCall)
 
-    // entire string pattern for url is needed, template literals will not work.
-    
-    // import images from path based on the passed parameter
-    // const modules = import.meta.glob(globString, { eager: true });
-    
-    // map over our modules to create our own object
-    const images = Object.entries(globCall).map((module, index) => ({
-        id: index,
-        url: module[0]
-    }));
+    // generate random number based on length of our globcall object
+    const ourRandomNumber = randomNumber(Object.keys(globCall).length)
 
-    // check our modules and objects are working correctly
-    console.log('our images object...', images);
+    // find the image url by matching its id with ourRandomNumber
+    const randomImage = globCall.find(image => image.id === ourRandomNumber);
 
-    console.log('our images length', Object.keys(images).length)
-    const ourRandomNumber = randomNumber(Object.keys(images).length)
-    
-    return images[randomNumber(globCall.length - 1, 0)];
+    return randomImage;
+
 };

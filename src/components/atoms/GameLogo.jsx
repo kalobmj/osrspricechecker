@@ -4,11 +4,15 @@ import { getRandomImage } from '../../utils/bottomImageLoader'
 // importing all gameLogo images
 const gameLogoModules = import.meta.glob('/src/assets/images/gameLogos/**/*.png', { eager: true });
 
+console.log({gameLogoModules})
+
 // gameLogos object using element index for key
-// const gameLogos = Object.values(gameLogoModules).map((module, index) => ({
-//     id: index,
-//     url: module.default
-// }));
+const gameLogos = Object.entries(gameLogoModules).map((module, index) => ({
+    id: index,
+    url: module[0]
+}));
+
+console.log({gameLogos})
 
 // getRandomImage will return an element from your image object. this will include the key index and the glob url path
 
@@ -42,17 +46,16 @@ const gameLogoModules = import.meta.glob('/src/assets/images/gameLogos/**/*.png'
 //         console.log(imagePaths)
 //     });
 
+// const test = getRandomImage()
+
 // osrs main logo
 const GameLogo = () => {
     // random number to determine which logo gets shown
     // const randomLogoNumber = randomNumber(3, 0);
 
-    console.log('gameLogoModules: ', gameLogoModules)
-    console.log('gameLogoModules type: ', typeof gameLogoModules)
+    const randomLogo = getRandomImage(gameLogos);
 
-    const randomLogo = getRandomImage[gameLogoModules];
-
-    console.log('randomLogo: ', randomLogo) // undefined
+    console.log('randomLogo from gameLogoModules / gameLogos: ', randomLogo) // undefined
 
     return (
         <img
