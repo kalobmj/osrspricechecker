@@ -57,3 +57,8 @@ fix gaps between items in main container
     need to fix folders
     all of my big components need to be destructured into smaller ones
     
+2/15
+    finally got the object modules to import and get random images 
+    need to continue breaking down files into smaller components
+    work on overall functionality.
+    work on apis will come after styling and button functions are fleshed out. then project will mostly be done

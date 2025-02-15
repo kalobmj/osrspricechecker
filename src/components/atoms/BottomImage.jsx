@@ -1,13 +1,23 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { getRandomImage } from '../../utils/bottomImageLoader';
+import { getRandomImage } from '../../utils/imageLoader';
+
+// importing bottomImage modules
+const bottomImageModules = import.meta.glob('/src/assets/images/bottomImages/**/*.jpg', { eager: true });
+
+// chaning bottomImageModules to an object to work with
+// might be able to take this process into its own component. because we hae used it twice 
+const bottomImages = Object.entries(bottomImageModules).map((module, index) => ({
+    id: index,
+    url: module[0]
+}));
 
 const BottomImage = () => {
-    const [bottomImageURL, setBottomImageURL] = useState('');
+    const [bottomImage, setBottomImage] = useState({});
 
     // function for handling url state change
     const handleImageChange = () => {
-        setBottomImageURL(getRandomImage)
+        setBottomImage(getRandomImage(bottomImages))
     };
 
     // useEffect on first render to display randomImage
@@ -19,7 +29,7 @@ const BottomImage = () => {
         <div className='bottom-image-container'>
             <img
                 className='bottom-image'
-                src={bottomImageURL} 
+                src={bottomImage.url} 
                 alt='bottom-img art-by-Soff(Chili)'
                 onClick={handleImageChange} 
             />

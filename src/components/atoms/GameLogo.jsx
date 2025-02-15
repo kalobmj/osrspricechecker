@@ -1,12 +1,13 @@
 import React from 'react'
-import { getRandomImage } from '../../utils/bottomImageLoader'
+import { getRandomImage } from '../../utils/imageLoader'
 
-// importing all gameLogo images
+// importing all gameLogo images at the beginning
 const gameLogoModules = import.meta.glob('/src/assets/images/gameLogos/**/*.png', { eager: true });
 
 console.log({gameLogoModules})
 
 // gameLogos object using element index for key
+// prepping for finding random image
 const gameLogos = Object.entries(gameLogoModules).map((module, index) => ({
     id: index,
     url: module[0]
