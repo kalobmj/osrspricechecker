@@ -54,7 +54,7 @@ hr {
 }
 
 .main-container {
-  border: 1px solid burlywood;
+  border: 2px solid grey;
   background-color: rgb(233, 222, 207);
   border-radius: 29px;
   margin: 16px;
@@ -71,7 +71,7 @@ hr {
 
 .main-container-underlay {
 
-  border: 1px solid brown;
+  border: 2px solid grey;
   border-radius: 40px;
   margin-top: 20px;
   /* background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),

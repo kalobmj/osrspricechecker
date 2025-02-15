@@ -62,3 +62,10 @@ fix gaps between items in main container
     need to continue breaking down files into smaller components
     work on overall functionality.
     work on apis will come after styling and button functions are fleshed out. then project will mostly be done
+    possibly can
+        must work on grabbing data via express.js backend server and possibly saving it on that server or localstorage
+    change border colors on colorway change, cause it will match the colors better
+    for wallpapers, just pick top 10 pictures that are highquality and fit the theme.
+        can have specific color ways have a custom background
+            play through picstures and find the right ones
+                make a new component to import and play with the wallpapers

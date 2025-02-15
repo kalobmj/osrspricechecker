@@ -10,20 +10,14 @@ import { randomNumber } from "./randomNumber";
 // function to return random image
 export function getRandomImage(globCall) {
 
-    // testing what is globcall, also test its type
-    console.log({globCall})
-    console.log('globcall type: ', typeof globCall)
-    console.log('globcall length: ', globCall.length)
-
     // generate random number based on length of our globcall object
     const ourRandomNumber = randomNumber(Object.keys(globCall).length)
     console.log({ourRandomNumber});
 
     // find the image url by matching its id with ourRandomNumber
     const foundRandomImage = Object.entries(globCall).find(image => {
-        return image.includes(String(ourRandomNumber)) // image has key of our randomNumber converted to a string
-    })
+        return image.includes(String(ourRandomNumber))
+    });
 
-    return foundRandomImage[1]; // the 2nd element in our array, which is our object we need to work with
-
+    return foundRandomImage[1];
 };

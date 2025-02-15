@@ -16,6 +16,8 @@ import React from 'react'
 // div around button will be the border it will animate on hover (when user hovers) to give them a preview of the colors
     // do functionality first then animated border last
 
+// when color way changes, have the wallpaper change with it to match the color scheme
+
 const ColorwayButton = ({ styling, handler, colorNumber }) => {
     return (
         <div className={`button-border color-${colorNumber}`}>
