@@ -48,14 +48,10 @@ hr {
   
 }
 
-.price-display-area h3.price {
-  font-size: 40px;
-  padding-right: 50px;
-}
 
 .main-container {
   border: 2px solid grey;
-  background-color: rgb(233, 222, 207);
+  background-color: rgba(159, 125, 77, 0.784);
   border-radius: 29px;
   margin: 16px;
   padding: 20px;
@@ -68,35 +64,35 @@ hr {
 
 /* background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
                   url("../../media/examples/lizard.png"); */
-
-.main-container-underlay {
-
-  border: 2px solid grey;
-  border-radius: 40px;
-  margin-top: 20px;
-  /* background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
-                  url("../../media/examples/lizard.png"); */
-  /* background-image: url('../src/images/AGS.webp'); */
-  /* background: cadetblue; */
-  /* background-repeat: repeat;
-  background-size: 50px 50px; */
-
-  background: 
-    url('../src/images/AGS.webp'),
-    linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5));
-    background-size: 50px 50px, auto;
-    background-repeat: repeat, no-repeat;
-
-}
-
-/* .top-half {
-  
-display: grid;
-grid-template-rows: 1fr;
-grid-template-columns: 1fr 1fr;
-gap: 75px;
-height: 100%;
-width: 100%;
+                  
+                  .main-container-underlay {
+                    
+                    border: 2px solid grey;
+                    border-radius: 40px;
+                    margin-top: 20px;
+                    /* background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
+                    url("../../media/examples/lizard.png"); */
+                    /* background-image: url('../src/images/AGS.webp'); */
+                    /* background: cadetblue; */
+                    /* background-repeat: repeat;
+                    background-size: 50px 50px; */
+                    
+                    background: 
+                    url('../src/images/AGS.webp'),
+                    linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5));
+                    background-size: 50px 50px, auto;
+                    background-repeat: repeat, no-repeat;
+                    
+                  }
+                  
+                  /* .top-half {
+                    
+                  display: grid;
+                  grid-template-rows: 1fr;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 75px;
+                  height: 100%;
+                  width: 100%;
 justify-content: space-between;
 align-items: center;
 
@@ -104,18 +100,57 @@ align-items: center;
 
 .top-half {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
 }
 
-.item-display-area {
+.price-display-area h3.price {
+  font-size: 40px;
+  color: rgb(201, 50, 50);
+  /* padding-right: 50px; */
+}
 
+.price-display-area {
+
+  background-color: rgba(0, 0, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+  border-radius: 14px;
   border: 1px solid burlywood;
-  border-radius: 10px;
+  height: 90px;
+  width: 150px;
+
+}
+
+.price-display-underlay {
+
+  background-color: blanchedalmond;
+  /* margin: 16px; */
+  border-radius: 16px;
+
+}
+
+.item-display-area {
+  
+  border: 1px solid burlywood;
+  background-color: rgba(0, 0, 255, 0.5);
+  border-radius: 14px;
+  height: 90px;
+  margin: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+}
+
+.item-display-underlay {
+
+background-color: blanchedalmond;
+border-radius: 16px;
+/* margin: 16px; */
 
 }
 
@@ -152,6 +187,8 @@ align-items: center;
 #search {
 
   margin-left: 10px;
+  background-color: rgba(9, 96, 173, 0.844);
+  color: white
 
 }
 

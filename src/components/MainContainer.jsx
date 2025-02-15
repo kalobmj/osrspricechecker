@@ -9,9 +9,9 @@ import ArmadylGodsword from '../assets/images/underlayImages/ArmadylGodsword.web
 // ## the primary function of this script is to fetch historical market data from the OSRS Wiki API (https://oldschool.runescape.wiki/w/RuneScape:Real-time_Prices)
 
 // fetch('https://api.example.com/data',  {
-    // headers: {
-    //     'User-Agent': 'MyApp/1.0'
-    // }
+// headers: {
+//     'User-Agent': 'MyApp/1.0'
+// }
 // });
 
 // axios.get('https://api.example.com/data', {
@@ -25,7 +25,7 @@ import ArmadylGodsword from '../assets/images/underlayImages/ArmadylGodsword.web
 export default function MainContainer({ underlayStyles, changeUnderlayBackground }) {
 
     // const [itemPriceData, setData] = useState(null);
-    
+
     // api testing
     // const myStatsURL = 'https://secure.runescape.com/m=hiscore_oldschool/index_lite.json?player=skullkepr94';
 
@@ -78,26 +78,35 @@ export default function MainContainer({ underlayStyles, changeUnderlayBackground
 
 
     return (
-        <div 
-            className='main-container-underlay' 
-                // inline underlay styling will go here, background mini icons will change dynamically based on state. the state containing all of the divs (background) properties will go here. refer to css styling
+        <div
+            className='main-container-underlay'
+            // inline underlay styling will go here, background mini icons will change dynamically based on state. the state containing all of the divs (background) properties will go here. refer to css styling
             style={underlayStyles}
-            >
+        >
             <div className='main-container'>
                 <div className='top-half'>
-                    <div className='price-display-area'>
-                        {/* item price will change here */}
-                        <h3 className='price'>284.4m</h3>
+                    <div
+                        className='price-display-underlay'
+                    >
+                        <div className='price-display-area'>
+                            {/* item price will change here */}
+                            <h3 className='price'>284.4m</h3>
+                        </div>
+
                     </div>
-                    <div className='item-display-area'>
-                        {/* image source will change here */}
-                        <img className='item-icon' alt='item-icon' src={ArmadylGodsword} />
+                    <div
+                        className='item-display-underlay'
+                    >
+                        <div className='item-display-area'>
+                            {/* image source will change here */}
+                            <img className='item-icon' alt='item-icon' src={ArmadylGodsword} />
+                        </div>
                     </div>
                 </div>
                 <div className='bottom-half'>
                     <div className='search-area'>
-                        <input type='text' placeholder='type to start searching...' name='item-search' 
-                        className='search-bar'
+                        <input type='text' placeholder='type to start searching...' name='item-search'
+                            className='search-bar'
                         />
                         <button id='search' className='btn btn-outline-primary'>search</button>
                     </div>
