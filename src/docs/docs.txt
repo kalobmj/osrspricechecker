@@ -69,3 +69,4 @@ fix gaps between items in main container
         can have specific color ways have a custom background
             play through picstures and find the right ones
                 make a new component to import and play with the wallpapers
+    fix bottom images to get random image thats not the last

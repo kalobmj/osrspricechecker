@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import MainContainer from './components/MainContainer'
 import BottomImage from './components/atoms/BottomImage'
 import Footer from './components/molecules/Footer'
 import MainHeader from './components/molecules/MainHeader'
+import { getRandomImage } from './utils/imageLoader'
 
 // import all backgroundImages
 const underlayModules = import.meta.glob('/src/assets/images/underlayImages/**/*.{webp,png}', { eager: true });
@@ -74,6 +75,39 @@ function App() {
   // setTimeout(() => {
   //   console.log(underlayStyles)
   // }, 5000);
+
+  // how to target the body backgroundColor
+  // document.body.style.backgroundColor = 'green';
+
+  // how to target body backgroundImage url
+  // document.body.style.backgroundImage = `url('../src/assets/images/bottomImages/BloodTorvaWoman.jpg')`
+
+  // backgroundWallpaper modules import
+  const backgroundImageModules = import.meta.glob('../src/assets/images/backgroundWallpapers/**/*.{jpg,png}', { eager: true });
+
+  // backgroundWallpaper object
+  const backgroundImages = Object.entries(backgroundImageModules).map((module, index) => ({
+    id: index,
+    url: module[0]
+  }));
+
+  // getting our random backgroundWallpaper when page loads
+  const landingWallpaper = getRandomImage(backgroundImages);
+  console.log({landingWallpaper})
+
+  const landingWallpaperURL = landingWallpaper.url;
+  console.log({landingWallpaperURL})
+
+  const testStr = '../src' + landingWallpaperURL.slice(1);
+
+  console.log({testStr})
+
+  // useEffect to change backgroundWallpaper on first render
+  useEffect(() => {
+
+    document.body.style.backgroundImage = `url('${testStr}')`
+
+  }, []);
 
   return (
     <div className='app-div'>
