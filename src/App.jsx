@@ -20,7 +20,7 @@ const underlayImages = Object.entries(underlayModules).map(([path, module]) => (
 // just our image IDs, to pass as params to change func
 const ourUnderlayImageIDs = underlayImages.map((imageData) => ({
   id: imageData.id
-}))
+}));
 
 console.log('just image ids (param for state change)', ourUnderlayImageIDs)
 
