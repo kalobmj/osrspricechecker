@@ -115,6 +115,8 @@ hr {
                     background: 
                     url('../src/images/AGS.webp'),
                     linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5));
+
+                    /* linear-gradient(rgba(221, 19, 19, 0.5), rgba(245, 220, 164, 0.5)) */
                     background-size: 50px 50px, auto;
                     background-repeat: repeat, no-repeat;
                     
