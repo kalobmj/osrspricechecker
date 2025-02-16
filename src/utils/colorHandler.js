@@ -1,4 +1,5 @@
 // imports..
+// instead of declaring our modules, move them to another js util file and import them into the files you need.
 
 // importing prayer icon modules
 const protectionPrayersIconsModules = import.meta.glob('/src/assets/images/colorUnderlayImages/protectionIcons/**/*.webp', { eager: true });
