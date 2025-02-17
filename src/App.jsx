@@ -40,7 +40,10 @@ function App() {
 
   });
 
-  // user picking different colors will trigger setUnderlayStyles, and depending on the param passed will handle the changing of each style property
+  // this is the state setter function. this will trigger on the first page reload to give the underlay a random 1 of 4 icons. the button will use this same state to change the color and icon. don't know what param will be passed.
+
+  // we will pass an object into our state setter function. this will have value that we will pull from. to update our styles state. for the 1 of 4 icons. we will use a random number to generate the first icon but the color will be the blue and yellow. on the button press it will pass our object that we get back from colorHandler.js with our buttonIndex. which will be provided when the component is rendered. the state setter will take this object passed to update our underlay styling state. that state changing will update the underlay.
+
   const changeUnderlayBackground = (colorScheme) => {
 
     console.log('color sheme', colorScheme)
@@ -51,6 +54,7 @@ function App() {
     setUnderlayStyles(prevUnderlayStyles => ({
       ...prevUnderlayStyles,
       backgroundImage: `url(${underlayImages.find(item => item.id === colorScheme.id).url})`,
+      // backgroundColor: elementProps.linearGradient etc....
       backgroundRepeat: 'repeat',
       backgroundSize: '50px 50px'
     }))
