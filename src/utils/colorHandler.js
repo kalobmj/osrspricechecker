@@ -49,6 +49,7 @@ export const colorHandler = (buttonNumber) => {
     // buttonNumber gets passed (button component index)
     // this will find the right styling from buttonProps, and will check that the id match buttonProps.id === buttonNumber
     // once our object is found we will return it.
+    // this return object is eventually passed into our underlay state setter function which will be inside of a custom handler function that will call the state setter and be passed with each component
 
     // will hardcode the button borders in css
 
