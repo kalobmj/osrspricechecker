@@ -70,3 +70,9 @@ fix gaps between items in main container
             play through picstures and find the right ones
                 make a new component to import and play with the wallpapers
     fix bottom images to get random image thats not the last
+
+2/16
+    once buttons are done and functional
+        work on fixing randomImage at bottom to not repeat the last image.
+            possibly spice up the header a little
+    then we will start work on backend and api
