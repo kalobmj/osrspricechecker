@@ -36,24 +36,20 @@ const buttonProps = [
         underlayingImage: `url(''), url(''), url('')`,
         linearGradient: 'linear-gradient(rgba(221, 19, 19, 0.5), rgba(245, 220, 164, 0.5))',
         backgroundWallpaper: `${backgroundImages[9].url}`
+    },
+    {
+        id: 1,
+        underlayingImage: `url()`,
+        linearGradient: 
     }
 ];
 
 export const colorHandler = (buttonNumber) => {
 
-    // underlay item images
-
-
-
-    // underlay linear gradient colors (also color of button backgrounds)
-
-
-    // background wallpaper
-
+    // buttonNumber gets passed (button component index)
+    // this will find the right styling from buttonProps, and will check that the id match buttonProps.id === buttonNumber
+    // once our object is found we will return it.
 
     // will hardcode the button borders in css
-
-
-    
 
 };
