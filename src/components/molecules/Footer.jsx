@@ -30,10 +30,24 @@ export default function Footer({ underlayStyles, changeUnderlayBackground }) {
         console.log(ourColor)
     }
 
+    const buttonIndexArray = [0, 1, 2];
 
+    const buttonElements = buttonIndexArray.map(buttonNumber => {
+
+        // we will call colorHandler.js based on buttonNumber passed -> const ourButtonInfo = colorHandler(1)
+        // this variable will have our button info and we will use it to create a function which will be passed into the component as the handler. buttonNumber will be the buttonIndex and will display +1
+
+        // function to get params to then pass and render our ColorwayButton components.
+        // <ColorwayButton buttonIndex={buttonNumber} handler={onClickHandler} etc.. />
+    });
+
+    console.log(buttonElements) // should be our components
 
     return (
         <div className="footer-container">
+            {/* vvvv when all done vvv */}
+            {/* {buttonElements} */} 
+
             <ColorwayButton 
                 buttonIndex={1} 
                 handler={checkOnClick}

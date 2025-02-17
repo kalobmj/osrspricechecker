@@ -29,7 +29,7 @@ console.log('module 10: ', backgroundImages[9])
 // linear-gradient(rgba(221, 19, 19, 0.5), rgba(245, 220, 164, 0.5))
 
 // hardcoded styles to apply to each button based on matching id value
-const buttonStyling = [
+const buttonProps = [
     {
         // first styling is for the 3 protection prayers
         id: 0,
@@ -39,7 +39,7 @@ const buttonStyling = [
     }
 ];
 
-export const colorHandler = () => {
+export const colorHandler = (buttonNumber) => {
 
     // underlay item images
 

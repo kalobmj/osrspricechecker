@@ -31,13 +31,6 @@ console.log('first image id / path', underlayImages[0].id)
 
 function App() {
 
-  console.log('this should be ags url', underlayImages[0].url)
-  console.log('this should be whip url', underlayImages[1].url)
-  console.log('this should be santa url', underlayImages[2].url)
-  console.log('this should be dds url', underlayImages[3].url)
-
-  console.log('dds url', underlayImages[2]?.url)
-
   // styling object set to default of ags and yellow blue gradient
   const [underlayStyles, setUnderlayStyles] = useState({
 
@@ -64,24 +57,6 @@ function App() {
 
   };
 
-  console.log('whip image path (id)', ourUnderlayImageIDs[1])
-  console.log('whip id from underlayImages', underlayImages[1].url)
-
-  // setTimeout(() => {
-  //   changeUnderlayBackground(ourUnderlayImageIDs[1])
-  // }, 5000);
-
-  // check if object is set correctly
-  // setTimeout(() => {
-  //   console.log(underlayStyles)
-  // }, 5000);
-
-  // how to target the body backgroundColor
-  // document.body.style.backgroundColor = 'green';
-
-  // how to target body backgroundImage url
-  // document.body.style.backgroundImage = `url('../src/assets/images/bottomImages/BloodTorvaWoman.jpg')`
-
   // backgroundWallpaper modules import
   const backgroundImageModules = import.meta.glob('../src/assets/images/backgroundWallpapers/**/*.{jpg,png}', { eager: true });
 
@@ -91,22 +66,12 @@ function App() {
     url: module[0]
   }));
 
-  // getting our random backgroundWallpaper when page loads
-  const landingWallpaper = getRandomImage(backgroundImages);
-  console.log({landingWallpaper})
-
-  const landingWallpaperURL = landingWallpaper.url;
-  console.log({landingWallpaperURL})
-
-  const testStr = '../src' + landingWallpaperURL.slice(1);
-
-  console.log({testStr})
+  // grabbing our landingWallpaper on first reload
+  const landingWallpaper = '../src' + `${getRandomImage(backgroundImages).url.slice(1)}` 
 
   // useEffect to change backgroundWallpaper on first render
   useEffect(() => {
-
-    document.body.style.backgroundImage = `url('${testStr}')`
-
+    document.body.style.backgroundImage = `url('${landingWallpaper}')`
   }, []);
 
   return (
