@@ -1,6 +1,7 @@
 import React from "react";
 import ColorwayButton from "../atoms/ColorwayButton";
 import { colorHandler } from "../../utils/colorHandler";
+import * as localModuleImports from "../../utils/moduleImports";
 
 export default function Footer({ underlayStyles, changeUnderlayBackground }) {
 
@@ -39,6 +40,12 @@ export default function Footer({ underlayStyles, changeUnderlayBackground }) {
 
         // function to get params to then pass and render our ColorwayButton components.
         // <ColorwayButton buttonIndex={buttonNumber} handler={onClickHandler} etc.. />
+
+        const ourButtonInfo = colorHandler(buttonNumber);
+        const localHandler = (buttonNumber) => {
+            changeUnderlayBackground(ourButtonInfo)
+        }
+
     });
 
     console.log(buttonElements) // should be our components
@@ -50,15 +57,15 @@ export default function Footer({ underlayStyles, changeUnderlayBackground }) {
 
             <ColorwayButton 
                 buttonIndex={1} 
-                handler={checkOnClick}
+                helper={() => changeUnderlayBackground(colorHandler(0))}
             />
             <ColorwayButton 
                 buttonIndex={2} 
-                handler={checkOnClick}
+                helper={checkOnClick}
             />
             <ColorwayButton 
                 buttonIndex={3} 
-                handler={checkOnClick}
+                helper={checkOnClick}
             />
         </div>
     )

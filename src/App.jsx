@@ -5,36 +5,18 @@ import BottomImage from './components/atoms/BottomImage'
 import Footer from './components/molecules/Footer'
 import MainHeader from './components/molecules/MainHeader'
 import { getRandomImage } from './utils/imageLoader'
-
-// import all backgroundImages
-const underlayModules = import.meta.glob('/src/assets/images/underlayImages/**/*.{webp,png}', { eager: true });
-console.log(underlayModules);
+import * as localModuleImports from './utils/moduleImports'
 
 
-// to map over each module and return its url with path as its unique id
-const underlayImages = Object.entries(underlayModules).map(([path, module]) => ({
-  id: path,
-  url: module.default
-}));
-
-// just our image IDs, to pass as params to change func
-const ourUnderlayImageIDs = underlayImages.map((imageData) => ({
-  id: imageData.id
-}));
-
-console.log('just image ids (param for state change)', ourUnderlayImageIDs)
-
-console.log('Loaded images', underlayImages)
-
-// param to be passed into setUnderlayStyles
-console.log('first image id / path', underlayImages[0].id)
+console.log('Loaded modules', localModuleImports.underlayModules)
+console.log('Loaded images', localModuleImports.underlayImages)
 
 function App() {
 
   // styling object set to default of ags and yellow blue gradient
   const [underlayStyles, setUnderlayStyles] = useState({
 
-    background: `url(${underlayImages[0].url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`,
+    background: `url(${localModuleImports.underlayImages[0].url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`,
     backgroundSize: '50px 50px, auto',
     backgroundRepeat: 'repeat, no-repeat'
 
@@ -47,19 +29,26 @@ function App() {
   const changeUnderlayBackground = (colorScheme) => {
 
     console.log('color sheme', colorScheme)
-    console.log([underlayImages.find(item => item.id === colorScheme.id)])
-
-    underlayImages.forEach(image => console.log(image.id))
 
     setUnderlayStyles(prevUnderlayStyles => ({
       ...prevUnderlayStyles,
-      backgroundImage: `url(${underlayImages.find(item => item.id === colorScheme.id).url})`,
+      // backgroundImage: `url(${localModuleImports.underlayImages.find(item => item.id === colorScheme.id).url})`,
       // backgroundColor: elementProps.linearGradient etc....
-      backgroundRepeat: 'repeat',
-      backgroundSize: '50px 50px'
+      // background: `url first, then color`,
+      background: `${
+        colorScheme.url != undefined 
+          ? `${colorScheme.url}, linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`
+          : `${colorScheme.underlayingImage}, ${colorScheme.linearGradient}`
+      }`,
+      backgroundSize: '50px 50px, auto',
+      backgroundRepeat: 'repeat, no-repeat'
     }))
 
   };
+  
+  // useEffect(() => {
+  //   changeUnderlayBackground(localModuleImports.underlayImages[2])
+  // }, [])
 
   // backgroundWallpaper modules import
   const backgroundImageModules = import.meta.glob('../src/assets/images/backgroundWallpapers/**/*.{jpg,png}', { eager: true });

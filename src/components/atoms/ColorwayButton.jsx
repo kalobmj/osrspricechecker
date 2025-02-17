@@ -1,10 +1,11 @@
 import React from 'react'
-import { colorHandler } from '../../utils/colorHandler';
-import { backgroundImageModules } from '../../utils/colorHandler';
+import { backgroundImageModules } from '../../utils/moduleImports';
 
 console.log({backgroundImageModules})
 
 // you are going to call colorHandler function. this will return an object which you will use to fill out the buttons properties. this will take a number which will be its index during a map, and the number passed will fill out its 
+
+// 3 buttons
 
 const ColorwayButton = ({ buttonIndex, helper }) => {
 
