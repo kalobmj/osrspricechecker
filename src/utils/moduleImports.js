@@ -4,7 +4,7 @@ export const protectionPrayersIconsModules = import.meta.glob('/src/assets/image
 // mapping over prayer icon modules
 export const protectionPrayerIcons = Object.entries(protectionPrayersIconsModules).map((module, index) => ({
     id: index,
-    module: module[0]
+    url: module[0]
 }));
 
 // import rest of changing underlay image modules

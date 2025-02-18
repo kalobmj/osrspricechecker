@@ -81,3 +81,4 @@ fix gaps between items in main container
     fix protection prayers on first color button
         work on dynamic borders for the color buttons
     fix the random bottom image so no repeat
+    might have to sort the modules..

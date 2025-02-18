@@ -19,46 +19,73 @@ function App() {
     // backgroundImage: `url(${localModuleImports.underlayImages[0].url})`,
     backgroundImage: `url(${localModuleImports.underlayImages[0].url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`,
     backgroundSize: '50px 50px, auto',
-    backgroundRepeat: 'repeat, no-repeat'
+    backgroundRepeat: 'space, no-repeat',
+    // backgroundPosition:
 
   });
+
+  // state to track unerlay prayer icon
+  const [prayer, swapPrayer] = useState(0);
+
+  // setState function for prayer
+  const changePrayer = () => {
+    swapPrayer(prevPrayer => prevPrayer === 0 ? 1 : 0)
+    console.log('prayer swapped')
+  };
 
   const changeUnderlayBackground = (colorScheme) => {
 
     console.log('color sheme', colorScheme)
 
-    setUnderlayStyles((prevUnderlayStyles) => ({
-      ...prevUnderlayStyles,
-      // backgroundImage: `url(${localModuleImports.underlayImages.find(item => item.id === colorScheme.id).url})`,
-      // backgroundColor: elementProps.linearGradient etc....
-      // background: `url first, then color`,
-      // background: `${
-      //   colorScheme.url != undefined 
-      //     ? `${colorScheme.url}, linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`
-      //     : `${colorScheme.underlayingImage}, ${colorScheme.linearGradient}`
-      // }`,
-      backgroundImage: `${
-        colorScheme.url != undefined 
-          ? `url(${colorScheme.url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))` 
-          : `${colorScheme.underlayingImage}, ${colorScheme.linearGradient}`
-      }`,
-      backgroundWallpaper: `${
-        colorScheme.backgroundWallpaper != undefined 
-          ? `${colorScheme.backgroundWallpaper}` 
-          : 'empty'
-      }`
-    }));
+    setUnderlayStyles((prevUnderlayStyles) => {
+      const newStyles = {
+        ...prevUnderlayStyles,
+        backgroundImage: `${colorScheme.url != undefined
+            ? `url(${colorScheme.url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`
+            : `${colorScheme.underlayingImage}, ${colorScheme.linearGradient}`
+          }`,
+        backgroundWallpaper: `${colorScheme.backgroundWallpaper != undefined
+            ? `${colorScheme.backgroundWallpaper}`
+            : 'empty'
+          }`
+      }
+      return newStyles
+    });
+
+    // setUnderlayStyles((prevUnderlayStyles) => ({
+    //   ...prevUnderlayStyles,
+    //   // backgroundImage: `url(${localModuleImports.underlayImages.find(item => item.id === colorScheme.id).url})`,
+    //   // backgroundColor: elementProps.linearGradient etc....
+    //   // background: `url first, then color`,
+    //   // background: `${
+    //   //   colorScheme.url != undefined 
+    //   //     ? `${colorScheme.url}, linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`
+    //   //     : `${colorScheme.underlayingImage}, ${colorScheme.linearGradient}`
+    //   // }`,
+    //   backgroundImage: `${colorScheme.url != undefined
+    //       ? `url(${colorScheme.url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`
+    //       : `${colorScheme.underlayingImage}, ${colorScheme.linearGradient}`
+    //     }`,
+    //   backgroundWallpaper: `${colorScheme.backgroundWallpaper != undefined
+    //       ? `${colorScheme.backgroundWallpaper}`
+    //       : 'empty'
+    //     }`,
+    //   backgroundPosition: `${colorScheme.backgroundPosition != undefined
+    //       ? `${colorScheme.backgroundPosition}`
+    //       : delete prevUnderlayStyles.backgroundPosition
+    //     }`
+    // }));
 
   };
 
   // grabbing our landingWallpaper on first reload
-  const landingWallpaper = '../' + `${getRandomImage(localModuleImports.backgroundImages).url.slice(1)}` 
+  const landingWallpaper = '../' + `${getRandomImage(localModuleImports.backgroundImages).url.slice(1)}`
 
   console.log('landing wallpaper: ', `${getRandomImage(localModuleImports.backgroundImages).url.slice(1)}`)
 
   setTimeout(() => {
-  console.log(document.getElementById('main-underlay-div'))
-    
+    console.log(document.getElementById('main-underlay-div'))
+
   }, 200);
 
   // useEffect to change backgroundWallpaper on first render
@@ -77,7 +104,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       console.log('underlayStyles state updated')
-      console.log({underlayStyles})
+      console.log({ underlayStyles })
       console.log(underlayStyles.backgroundWallpaper)
     }, 500);
     if (underlayStyles.backgroundWallpaper != undefined) {
@@ -97,7 +124,8 @@ function App() {
         <BottomImage />
       </div>
       <Footer
-        setTestState={setTestState}
+        prayer={prayer}
+        changePrayer={changePrayer}
         changeUnderlayBackground={changeUnderlayBackground}
       />
     </div>

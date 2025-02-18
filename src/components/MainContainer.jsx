@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import ArmadylGodsword from '../assets/images/underlayImages/ArmadylGodsword.webp'
 
-export default function MainContainer({ underlayStyles, changeUnderlayBackground }) {
+export default function MainContainer({ underlayStyles, changeUnderlayBackground, prayer, swapPrayer }) {
 
     const [data, setData] = useState({
         'prices': null,

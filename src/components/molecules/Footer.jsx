@@ -3,7 +3,7 @@ import ColorwayButton from "../atoms/ColorwayButton";
 import { colorHandler } from "../../utils/colorHandler";
 import * as localModuleImports from "../../utils/moduleImports";
 
-export default function Footer({ changeUnderlayBackground, setTestState }) {
+export default function Footer({ changeUnderlayBackground, prayer, changePrayer }) {
 
     // should console a function that we passed
     // console.log(changeUnderlayBackground);
@@ -17,7 +17,7 @@ export default function Footer({ changeUnderlayBackground, setTestState }) {
 
     // button component will expect a handler function
     // when mapping our 3 buttons. pass it the handler function in utils .utils/colorHandler.js
-        // colorHandler.js will take the index argument
+    // colorHandler.js will take the index argument
 
     // map => render buttons. pass down the colorHandler that when triggered with the index, returns and object with the background img url, color of buttons background color, main-container underlay image and linear-gradient color.
 
@@ -41,16 +41,32 @@ export default function Footer({ changeUnderlayBackground, setTestState }) {
         // function to get params to then pass and render our ColorwayButton components.
         // <ColorwayButton buttonIndex={buttonNumber} handler={onClickHandler} etc.. />
 
-        const ourButtonInfo = colorHandler(buttonNumber);
-        const localHandler = (buttonNumber) => {
-            changeUnderlayBackground(ourButtonInfo)
-        }
+        console.log({buttonNumber})
+        console.log({prayer})
 
-        return <ColorwayButton 
-            buttonIndex={buttonNumber} 
-            helper={() => localHandler()} 
-            buttonKey={ourButtonInfo.id}
+        if (buttonNumber === 0) {
+            const ourButtonInfo = colorHandler(buttonNumber, prayer)
+            console.log({ourButtonInfo})
+            const localHandler = () => {
+                changeUnderlayBackground(ourButtonInfo)
+                changePrayer();
+            }
+            return <ColorwayButton
+                buttonIndex={buttonNumber}
+                helper={() => localHandler()}
+                buttonKey={ourButtonInfo.id}
             />
+        } else {
+            const ourButtonInfo = colorHandler(buttonNumber);
+            const localHandler = () => {
+                changeUnderlayBackground(ourButtonInfo)
+            }
+            return <ColorwayButton
+                buttonIndex={buttonNumber}
+                helper={() => localHandler()}
+                buttonKey={ourButtonInfo.id}
+            />
+        }
 
     });
 
@@ -59,7 +75,7 @@ export default function Footer({ changeUnderlayBackground, setTestState }) {
     return (
         <div className="footer-container">
             {/* vvvv when all done vvv */}
-            {/* {buttonElements} */} 
+            {/* {buttonElements} */}
 
             {buttonElements}
 
