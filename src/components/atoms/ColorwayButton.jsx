@@ -1,7 +1,7 @@
 import React from 'react'
 import { backgroundImageModules } from '../../utils/moduleImports';
 
-console.log({backgroundImageModules})
+console.log({ backgroundImageModules })
 
 // you are going to call colorHandler function. this will return an object which you will use to fill out the buttons properties. this will take a number which will be its index during a map, and the number passed will fill out its 
 
@@ -13,10 +13,10 @@ const ColorwayButton = ({ buttonIndex, helper }) => {
 
     return (
         <div className={`footer-btn ${buttonIndex}`}>
-            <button 
-                className={`color ${buttonIndex}`} 
-                onClick={helper} 
-                >
+            <button
+                className={`color-${buttonIndex}`}
+                onClick={helper}
+            >
                 color {buttonIndex + 1}
             </button>
         </div>

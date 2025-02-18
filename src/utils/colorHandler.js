@@ -94,7 +94,7 @@ console.log('protection prayer icons 2', localModuleImports.protectionPrayerIcon
             console.log({buttonNumber})
             console.log({prayerState})
             const magePrayObject = {
-                ...buttonProps[1],
+                ...buttonProps[0],
                 underlayingImage: `url(${localModuleImports.protectionPrayerIcons[1].url})`
             }
             console.log('mageprayobject 0 1',magePrayObject)

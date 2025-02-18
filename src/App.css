@@ -191,17 +191,33 @@ input:focus::-webkit-input-placeholder {
 
 }
 
-.footer-container button {
 
+.footer-container button {
+  
   background-color: rgba(128, 128, 128, 0.474);
   font-weight: 200;
   border-radius: 75px;
-
+  
 }
 
 .footer-btn:hover {
-
+  
   border-radius: 75px;
-  background-color: rgba(128, 128, 128, 0.618);
+  
+}
 
+/* .color-0:hover {
+  background-color: aqua;
+} */
+
+.color-0:hover {
+  background: linear-gradient(rgba(221, 19, 19, 0.5), rgba(245, 220, 164, 0.5));
+}
+
+.color-1:hover {
+  background: linear-gradient(rgba(2, 38, 117, 0.5), rgba(156, 145, 145, 0.5));
+}
+
+.color-2:hover {
+  background: linear-gradient(rgba(145, 163, 18, 0.5), rgba(50, 46, 46, 0.5));
 }

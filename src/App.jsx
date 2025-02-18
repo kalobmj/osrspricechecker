@@ -115,7 +115,6 @@ function App() {
   return (
     <div className='app-div'>
       <div className='app-top-container'>
-        {localModuleImports.underlayImages[0].url}
         <MainHeader />
         <MainContainer
           underlayStyles={underlayStyles}

@@ -82,3 +82,4 @@ fix gaps between items in main container
         work on dynamic borders for the color buttons
     fix the random bottom image so no repeat
     might have to sort the modules..
+    drop the moving borders, work on bottomimage fixer
