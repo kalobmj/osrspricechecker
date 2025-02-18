@@ -63,8 +63,8 @@ body {
   display: flex;
   flex-direction: column;
   /* below moves buttons towards bottom */
-  /* justify-content: space-between; */
-  justify-content: space-evenly;
+  justify-content: space-between;
+  /* justify-content: space-evenly; */
   min-height: 90vh;
 }
 
