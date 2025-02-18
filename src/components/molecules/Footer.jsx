@@ -3,7 +3,7 @@ import ColorwayButton from "../atoms/ColorwayButton";
 import { colorHandler } from "../../utils/colorHandler";
 import * as localModuleImports from "../../utils/moduleImports";
 
-export default function Footer({ changeUnderlayBackground }) {
+export default function Footer({ changeUnderlayBackground, setTestState }) {
 
     // should console a function that we passed
     // console.log(changeUnderlayBackground);
@@ -46,6 +46,12 @@ export default function Footer({ changeUnderlayBackground }) {
             changeUnderlayBackground(ourButtonInfo)
         }
 
+        return <ColorwayButton 
+            buttonIndex={buttonNumber} 
+            helper={() => localHandler()} 
+            buttonKey={ourButtonInfo.id}
+            />
+
     });
 
     console.log(buttonElements) // should be our components
@@ -55,7 +61,9 @@ export default function Footer({ changeUnderlayBackground }) {
             {/* vvvv when all done vvv */}
             {/* {buttonElements} */} 
 
-            <ColorwayButton 
+            {buttonElements}
+
+            {/* <ColorwayButton 
                 buttonIndex={1} 
                 helper={() => changeUnderlayBackground(colorHandler(1))}
             />
@@ -65,8 +73,8 @@ export default function Footer({ changeUnderlayBackground }) {
             />
             <ColorwayButton 
                 buttonIndex={3} 
-                helper={checkOnClick}
-            />
+                helper={() => setTestState(prevState => prevState + 1)}
+            /> */}
         </div>
     )
 };

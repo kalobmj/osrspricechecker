@@ -15,9 +15,9 @@ const ColorwayButton = ({ buttonIndex, helper }) => {
         <div className={`footer-btn ${buttonIndex}`}>
             <button 
                 className={`color ${buttonIndex}`} 
-                onClick={helper}
+                onClick={helper} 
                 >
-                color {buttonIndex}
+                color {buttonIndex + 1}
             </button>
         </div>
     )
