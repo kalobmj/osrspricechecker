@@ -16,9 +16,11 @@ function App() {
   // styling object set to default of ags and yellow blue gradient
   const [underlayStyles, setUnderlayStyles] = useState({
 
-    background: `url(${localModuleImports.underlayImages[0].url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`,
+    // background: `url(${localModuleImports.underlayImages[0].url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`,
+    backgroundImage: `url(${localModuleImports.underlayImages[0].url})`,
+    backgroundColor: 'linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))',
     backgroundSize: '50px 50px, auto',
-    backgroundRepeat: 'repeat, no-repeat'
+    backgroundRepeat: 'repeat'
 
   });
 
@@ -35,33 +37,41 @@ function App() {
       // backgroundImage: `url(${localModuleImports.underlayImages.find(item => item.id === colorScheme.id).url})`,
       // backgroundColor: elementProps.linearGradient etc....
       // background: `url first, then color`,
-      background: `${
+      // background: `${
+      //   colorScheme.url != undefined 
+      //     ? `${colorScheme.url}, linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`
+      //     : `${colorScheme.underlayingImage}, ${colorScheme.linearGradient}`
+      // }`,
+      backgroundImage: `${
         colorScheme.url != undefined 
-          ? `${colorScheme.url}, linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`
-          : `${colorScheme.underlayingImage}, ${colorScheme.linearGradient}`
+          ? `${colorScheme.url}` 
+          : `${colorScheme.underlayingImage}`
       }`,
-      // backgroundSize: '50px 50px, auto',
-      // backgroundRepeat: 'repeat, no-repeat'
-    }))
+      backgroundColor: `${
+        colorScheme.url != undefined 
+          ? 'linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))' 
+          : `${colorScheme.linearGradient}`
+      }`,
+    }));
 
   };
+
+  const mainUnderlayDiv = document.getElementById('main-underlay-div')
+
+  useEffect(() => {
+    console.log({underlayStyles})
+    // mainUnderlayDiv.style = underlayStyles;
+    console.log({mainUnderlayDiv})
+  }, [underlayStyles])
   
   // useEffect(() => {
   //   changeUnderlayBackground(localModuleImports.underlayImages[2])
   // }, [])
 
-  // backgroundWallpaper modules import
-  const backgroundImageModules = import.meta.glob('../src/assets/images/backgroundWallpapers/**/*.{jpg,png}', { eager: true });
-
-  // backgroundWallpaper object
-  const backgroundImages = Object.entries(backgroundImageModules).map((module, index) => ({
-    id: index,
-    url: module[0]
-  }));
-
   // grabbing our landingWallpaper on first reload
-  const landingWallpaper = '../src' + `${getRandomImage(backgroundImages).url.slice(1)}` 
+  const landingWallpaper = '../src' + `${getRandomImage(localModuleImports.backgroundImages).url.slice(1)}` 
 
+  
   // useEffect to change backgroundWallpaper on first render
   useEffect(() => {
     document.body.style.backgroundImage = `url('${landingWallpaper}')`

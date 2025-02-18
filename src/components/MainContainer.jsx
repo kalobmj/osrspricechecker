@@ -21,47 +21,46 @@ import ArmadylGodsword from '../assets/images/underlayImages/ArmadylGodsword.web
 //   });
 
 
-
 export default function MainContainer({ underlayStyles, changeUnderlayBackground }) {
-
+    
     // const [itemPriceData, setData] = useState(null);
-
+    
     // api testing
     // const myStatsURL = 'https://secure.runescape.com/m=hiscore_oldschool/index_lite.json?player=skullkepr94';
-
+    
     // // useEffect for fetching my player data
     // useEffect(() => {
-    //     fetch('http://localhost:5000/api/player/skullkepr94') // use template literal to change username
-    //         .then(res => res.json())
-    //         .then(data => console.log('my account data:', data))
-    //         .catch(err => console.error('Error fetching account data:', err))
-    // }, [])
-
-    const [data, setData] = useState({
-        'prices': null,
-        'images': null,
-        'descriptions': null,
-        'itemId': null
-    });
-
-    const itemPriceData = 'https://oldschool.runescape.wiki/?title=Module:GEPrices/data.json&action=raw&ctype=application%2Fjson';
-
-    const imagePriceData = '';
-
-    const descriptPriceData = '';
-
-    const itemId = '';
-
-    // useEffect for getting data about items
-    // got item prices, need : images, descriptions, itemid
-    useEffect(() => {
-        const storedData = localStorage.getItem('data');
-        if (storedData) {
-            const parsedData = JSON.parse(storedData)
-            setData(JSON.parse(storedData))
-            console.log('loaded data from localStorage', parsedData)
-        } else {
-            console.log('Calling the API...')
+        //     fetch('http://localhost:5000/api/player/skullkepr94') // use template literal to change username
+        //         .then(res => res.json())
+        //         .then(data => console.log('my account data:', data))
+        //         .catch(err => console.error('Error fetching account data:', err))
+        // }, [])
+        
+        const [data, setData] = useState({
+            'prices': null,
+            'images': null,
+            'descriptions': null,
+            'itemId': null
+        });
+        
+        const itemPriceData = 'https://oldschool.runescape.wiki/?title=Module:GEPrices/data.json&action=raw&ctype=application%2Fjson';
+        
+        const imagePriceData = '';
+        
+        const descriptPriceData = '';
+        
+        const itemId = '';
+        
+        // useEffect for getting data about items
+        // got item prices, need : images, descriptions, itemid
+        useEffect(() => {
+            const storedData = localStorage.getItem('data');
+            if (storedData) {
+                const parsedData = JSON.parse(storedData)
+                setData(JSON.parse(storedData))
+                console.log('loaded data from localStorage', parsedData)
+            } else {
+                console.log('Calling the API...')
             fetch(itemPriceData)
                 .then(prices => prices.json())
                 .then(prices => {
@@ -70,16 +69,18 @@ export default function MainContainer({ underlayStyles, changeUnderlayBackground
                     console.log('our prices data', prices)
                 })
                 .catch(err => console.error('this is the err', err))
-        }
-    }, [])
-
-    // logic for colorway buttons will go here
-
-
-
-    return (
-        <div
-            className='main-container-underlay'
+            }
+        }, [])
+        
+        // logic for colorway buttons will go here
+        
+        console.log({underlayStyles})
+        console.log('main container rerendered')
+        
+        return (
+            <div
+            className='main-container-underlay' 
+            id='main-underlay-div'
             // inline underlay styling will go here, background mini icons will change dynamically based on state. the state containing all of the divs (background) properties will go here. refer to css styling
             style={underlayStyles}
         >
