@@ -76,3 +76,5 @@ fix gaps between items in main container
         work on fixing randomImage at bottom to not repeat the last image.
             possibly spice up the header a little
     then we will start work on backend and api
+2/18 
+    we got styling object and state updating but for some reason its not passing down to our maincontainer component 

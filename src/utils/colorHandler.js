@@ -23,7 +23,7 @@ const buttonProps = [
     {
         id: 1,
         underlayingImage: `${localModuleImports.changedUnderlayImages[0].url}`,
-        linearGradient: 'linear-gradient(rgba(137, 215, 239, 0.5),rgba(156, 145, 145, 0.5))',
+        linearGradient: 'linear-gradient(rgba(137, 215, 239, 0.5), rgba(156, 145, 145, 0.5))',
         backgroundWallpaper: `${localModuleImports.backgroundImages[2].url}`
     },
     {

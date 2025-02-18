@@ -57,11 +57,11 @@ export default function Footer({ underlayStyles, changeUnderlayBackground }) {
 
             <ColorwayButton 
                 buttonIndex={1} 
-                helper={() => changeUnderlayBackground(colorHandler(0))}
+                helper={() => changeUnderlayBackground(colorHandler(1))}
             />
             <ColorwayButton 
                 buttonIndex={2} 
-                helper={checkOnClick}
+                helper={() => changeUnderlayBackground(colorHandler(2))}
             />
             <ColorwayButton 
                 buttonIndex={3} 
