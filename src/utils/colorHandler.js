@@ -11,6 +11,18 @@ for (let i = 0; i < localModuleImports.protectionPrayerIcons.length; i++) {
     }
 };
 
+console.log(localModuleImports.backgroundImages[0]);
+console.log(localModuleImports.backgroundImages[1]);
+console.log(localModuleImports.backgroundImages[2]);
+console.log(localModuleImports.backgroundImages[3]);
+console.log(localModuleImports.backgroundImages[4]);
+console.log(localModuleImports.backgroundImages[5]);
+console.log(localModuleImports.backgroundImages[6]);
+console.log(localModuleImports.backgroundImages[7]);
+console.log(localModuleImports.backgroundImages[8]);
+console.log(localModuleImports.backgroundImages[9]);
+// console.log(localModuleImports.backgroundImages[0]);
+
 // hardcoded styles to apply to each button based on matching id value
 const buttonProps = [
     {

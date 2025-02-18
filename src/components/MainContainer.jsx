@@ -77,6 +77,13 @@ export default function MainContainer({ underlayStyles, changeUnderlayBackground
         console.log({underlayStyles})
         console.log('main container rerendered')
         
+  console.log(document.getElementById('main-underlay-div'))
+
+        useEffect(() => {
+            document.getElementById('main-underlay-div').style = underlayStyles
+        }, [underlayStyles])
+
+        
         return (
             <div
             className='main-container-underlay' 

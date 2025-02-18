@@ -32,7 +32,7 @@ function App() {
 
     console.log('color sheme', colorScheme)
 
-    setUnderlayStyles(prevUnderlayStyles => ({
+    setUnderlayStyles((prevUnderlayStyles) => ({
       ...prevUnderlayStyles,
       // backgroundImage: `url(${localModuleImports.underlayImages.find(item => item.id === colorScheme.id).url})`,
       // backgroundColor: elementProps.linearGradient etc....
@@ -52,16 +52,18 @@ function App() {
           ? 'linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))' 
           : `${colorScheme.linearGradient}`
       }`,
+      backgroundWallpaper: `${
+        colorScheme.backgroundWallpaper != undefined 
+          ? `${colorScheme.backgroundWallpaper}` 
+          : 'empty'
+      }`
     }));
 
   };
 
-  const mainUnderlayDiv = document.getElementById('main-underlay-div')
-
   useEffect(() => {
     console.log({underlayStyles})
-    // mainUnderlayDiv.style = underlayStyles;
-    console.log({mainUnderlayDiv})
+    document.body.style.backgroundImage = `url(${underlayStyles.backgroundW})`
   }, [underlayStyles])
   
   // useEffect(() => {
@@ -69,9 +71,12 @@ function App() {
   // }, [])
 
   // grabbing our landingWallpaper on first reload
-  const landingWallpaper = '../src' + `${getRandomImage(localModuleImports.backgroundImages).url.slice(1)}` 
+  const landingWallpaper = '../' + `${getRandomImage(localModuleImports.backgroundImages).url.slice(1)}` 
 
-  
+  console.log('landing wallpaper: ', `${getRandomImage(localModuleImports.backgroundImages).url.slice(1)}`)
+
+  console.log(document.getElementById('main-underlay-div'))
+
   // useEffect to change backgroundWallpaper on first render
   useEffect(() => {
     document.body.style.backgroundImage = `url('${landingWallpaper}')`
@@ -88,7 +93,6 @@ function App() {
         <BottomImage />
       </div>
       <Footer
-        underlayStyles={underlayStyles}
         changeUnderlayBackground={changeUnderlayBackground}
       />
     </div>

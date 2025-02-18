@@ -3,7 +3,7 @@ import ColorwayButton from "../atoms/ColorwayButton";
 import { colorHandler } from "../../utils/colorHandler";
 import * as localModuleImports from "../../utils/moduleImports";
 
-export default function Footer({ underlayStyles, changeUnderlayBackground }) {
+export default function Footer({ changeUnderlayBackground }) {
 
     // should console a function that we passed
     // console.log(changeUnderlayBackground);
