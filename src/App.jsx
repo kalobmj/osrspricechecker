@@ -9,19 +9,11 @@ import * as localModuleImports from './utils/moduleImports'
 
 function App() {
 
-  //backgroundImage: combine linear-gradient and url
-
   // styling object set to default of ags and yellow blue gradient
   const [underlayStyles, setUnderlayStyles] = useState({
-
-    // background: `url(${localModuleImports.underlayImages[0].url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`,
-    // backgroundColor: 'linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))',
-    // backgroundImage: `url(${localModuleImports.underlayImages[0].url})`,
     backgroundImage: `url(${localModuleImports.underlayImages[0].url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`,
     backgroundSize: '50px 50px, auto',
     backgroundRepeat: 'space, no-repeat',
-    // backgroundPosition:
-
   });
 
   // state to track unerlay prayer icon
@@ -51,31 +43,6 @@ function App() {
       }
       return newStyles
     });
-
-    // setUnderlayStyles((prevUnderlayStyles) => ({
-    //   ...prevUnderlayStyles,
-    //   // backgroundImage: `url(${localModuleImports.underlayImages.find(item => item.id === colorScheme.id).url})`,
-    //   // backgroundColor: elementProps.linearGradient etc....
-    //   // background: `url first, then color`,
-    //   // background: `${
-    //   //   colorScheme.url != undefined 
-    //   //     ? `${colorScheme.url}, linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`
-    //   //     : `${colorScheme.underlayingImage}, ${colorScheme.linearGradient}`
-    //   // }`,
-    //   backgroundImage: `${colorScheme.url != undefined
-    //       ? `url(${colorScheme.url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`
-    //       : `${colorScheme.underlayingImage}, ${colorScheme.linearGradient}`
-    //     }`,
-    //   backgroundWallpaper: `${colorScheme.backgroundWallpaper != undefined
-    //       ? `${colorScheme.backgroundWallpaper}`
-    //       : 'empty'
-    //     }`,
-    //   backgroundPosition: `${colorScheme.backgroundPosition != undefined
-    //       ? `${colorScheme.backgroundPosition}`
-    //       : delete prevUnderlayStyles.backgroundPosition
-    //     }`
-    // }));
-
   };
 
   // grabbing our landingWallpaper on first reload
