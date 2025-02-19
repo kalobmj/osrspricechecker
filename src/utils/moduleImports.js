@@ -16,10 +16,6 @@ export const changedUnderlayImages = Object.entries(changedUnderlayImageModules)
     url: module[0]
 }));
 
-const test = Object.entries(changedUnderlayImageModules)
-
-console.log({test})
-
 // importing backroundWallpaper modules
 export const backgroundImageModules = import.meta.glob('/src/assets/images/backgroundWallpapers/**/*.{jpg,png}', { eager: true });
 
