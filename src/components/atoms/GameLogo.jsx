@@ -1,27 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { getRandomImage } from '../../utils/imageLoader'
-
-// importing all gameLogo images at the beginning
-const gameLogoModules = import.meta.glob('/src/assets/images/gameLogos/**/*.png', { eager: true });
-console.log({gameLogoModules})
-
-// gameLogos object using element index for key
-const gameLogos = Object.entries(gameLogoModules).map((module, index) => ({
-    id: index,
-    url: module[0]
-}));
-console.log({gameLogos})
+import * as localImportModules from '../../utils/moduleImports'
 
 // osrs main logo
 const GameLogo = () => {
-    const randomLogo = getRandomImage(gameLogos);
-    console.log('randomLogo from gameLogoModules / gameLogos: ', randomLogo);
+    const [gameLogo, setGameLogo] = useState('');
+
+    // function for handling gameLogo state change
+    const handleLogoChange = () => {
+        // possbily check for last same image in util function or here
+        setGameLogo(getRandomImage(localImportModules.gameLogos))
+    };
+
+    // useEffect on first render to display gameLogo
+    useEffect(() => {
+        handleLogoChange();
+    }, []);
+
+    console.log('gamelogo url: ', gameLogo.url)
 
     return (
         <img
-            className={`rs-logo ${randomLogo.id}`} 
-            src={randomLogo.url}  
-            alt='osrs-logo'
+            className={'rs-logo'} 
+            src={gameLogo.url}  
+            alt='osrs-logo' 
+            onClick={handleLogoChange}
         />
     )
 };

@@ -9,7 +9,7 @@ import * as localModuleImports from './utils/moduleImports'
 
 function App() {
 
-  // styling object set to default of ags and yellow blue gradient
+  // styling object set to default of whip and yellow blue gradient
   const [underlayStyles, setUnderlayStyles] = useState({
     backgroundImage: `url(${localModuleImports.underlayImages[0].url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`,
     backgroundSize: '50px 50px, auto',
@@ -50,23 +50,10 @@ function App() {
 
   console.log('landing wallpaper: ', `${getRandomImage(localModuleImports.backgroundImages).url.slice(1)}`)
 
-  setTimeout(() => {
-    console.log(document.getElementById('main-underlay-div'))
-
-  }, 200);
-
   // useEffect to change backgroundWallpaper on first render
   useEffect(() => {
     document.body.style.backgroundImage = `url('${landingWallpaper}')`
   }, []);
-
-  const [testState, setTestState] = useState(0);
-
-  useEffect(() => {
-    setTimeout(() => {
-      console.log('testState: ', testState)
-    }, 2000);
-  }, [testState])
 
   useEffect(() => {
     setTimeout(() => {

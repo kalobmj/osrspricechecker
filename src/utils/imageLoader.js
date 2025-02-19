@@ -1,21 +1,18 @@
 import { randomNumber } from "./randomNumber";
 
-// imports images from bottomImages folder
-// can write in functionality to support grabbing all images in the future
-// keep module variable the same. pass in parameters for the images source, and file types. use template literal
-// then take our fleshed out object to return a random image from that list
-// this can work for bottom image and game logo
-// src\assets\images\bottomImages
-
 // function to return random image
-export function getRandomImage(globCall) {
+export function getRandomImage(globCall, state) {
 
     // generate random number based on length of our globcall object
     const ourRandomNumber = randomNumber(Object.keys(globCall).length)
+    console.log('globcall length: ', Object.entries(globCall).length)
     console.log({ourRandomNumber});
 
     // find the image url by matching its id with ourRandomNumber
     const foundRandomImage = Object.entries(globCall).find(image => {
+
+        if (image.includes(string(ourRandomNumber) []))
+
         return image.includes(String(ourRandomNumber))
     });
 

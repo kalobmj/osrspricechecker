@@ -17,7 +17,7 @@ export default function Footer({ changeUnderlayBackground, prayer, changePrayer 
             return <ColorwayButton
                 buttonIndex={buttonNumber}
                 helper={() => localHandler()}
-                buttonKey={ourButtonInfo.id}
+                key={ourButtonInfo.id}
             />
         } else {
             const ourButtonInfo = colorHandler(buttonNumber);
@@ -27,7 +27,7 @@ export default function Footer({ changeUnderlayBackground, prayer, changePrayer 
             return <ColorwayButton
                 buttonIndex={buttonNumber}
                 helper={() => localHandler()}
-                buttonKey={ourButtonInfo.id}
+                key={ourButtonInfo.id}
             />
         }
     });

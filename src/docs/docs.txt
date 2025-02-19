@@ -83,3 +83,9 @@ fix gaps between items in main container
     fix the random bottom image so no repeat
     might have to sort the modules..
     drop the moving borders, work on bottomimage fixer
+
+2/19 
+    need to come up with a util function that will sort our module imports, because they are not constant between my laptop and desktop.
+    fix randomImage puller util so it will not return the last image.
+        bottom image doesn't auto change on renders because it is maintained in state.
+            gameLogos does not do with. we need to keep its value in state

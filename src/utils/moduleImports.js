@@ -33,3 +33,21 @@ export const underlayImages = Object.entries(underlayModules).map((module, index
   id: index,
   url: module[0]
 }));
+
+// importing all gameLogo image modules
+export const gameLogoModules = import.meta.glob('/src/assets/images/gameLogos/**/*.png', { eager: true });
+
+// gameLogo objects
+export const gameLogos = Object.entries(gameLogoModules).map((module, index) => ({
+    id: index,
+    url: module[0]
+}));
+
+// importing bottomImage modules
+export const bottomImageModules = import.meta.glob('/src/assets/images/bottomImages/**/*.jpg', { eager: true });
+
+// bottomImages objects 
+export const bottomImages = Object.entries(bottomImageModules).map((module, index) => ({
+    id: index,
+    url: module[0]
+}));
