@@ -89,3 +89,5 @@ fix gaps between items in main container
     fix randomImage puller util so it will not return the last image.
         bottom image doesn't auto change on renders because it is maintained in state.
             gameLogos does not do with. we need to keep its value in state
+    styling and image fetch are mostly done.
+        just need to work on sorting module imports, and working with api then project will mostly be done
