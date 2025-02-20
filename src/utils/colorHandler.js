@@ -23,30 +23,22 @@ const buttonProps = [
 ];
 
 export const colorHandler = (buttonNumber, prayerState) => {
-
     if (buttonNumber === 0) {
-        console.log({buttonNumber})
-        console.log({prayerState})
         if (prayerState === 0) {
             const magePrayObject = {
                 ...buttonProps[0],
                 underlayingImage: `url(${localModuleImports.protectionPrayerIcons[0].url})`
             }
-            console.log('mageprayobject 0 0', magePrayObject)
             return magePrayObject;
         }
         if (prayerState === 1) {
-            console.log({buttonNumber})
-            console.log({prayerState})
             const magePrayObject = {
                 ...buttonProps[0],
                 underlayingImage: `url(${localModuleImports.protectionPrayerIcons[1].url})`
             }
-            console.log('mageprayobject 0 1',magePrayObject)
             return magePrayObject;
         }
     } else {
         return buttonProps[buttonNumber];
     }
-
 };

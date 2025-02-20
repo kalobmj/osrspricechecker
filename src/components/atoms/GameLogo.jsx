@@ -13,9 +13,9 @@ const GameLogo = () => {
 
     return (
         <img
-            className={'rs-logo'} 
-            src={gameLogo.url}  
-            alt='osrs-logo' 
+            className={'rs-logo'}
+            src={gameLogo.url}
+            alt='osrs-logo'
             onClick={handleLogoChange}
         />
     )

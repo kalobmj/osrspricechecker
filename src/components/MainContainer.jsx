@@ -47,7 +47,6 @@ export default function MainContainer({ underlayStyles, changeUnderlayBackground
         <div
             className='main-container-underlay'
             id='main-underlay-div'
-            // inline underlay styling will go here, background mini icons will change dynamically based on state. the state containing all of the divs (background) properties will go here. refer to css styling
             style={underlayStyles}
         >
             <div className='main-container'>
