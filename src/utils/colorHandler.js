@@ -1,24 +1,25 @@
 import * as localModuleImports from './moduleImports.js'
+import { getSpecificImage } from './imageLoader.js';
 
-// hardcoded styles to apply to each button based on matching id value
+// button style props based on matching image urls
 const buttonProps = [
     {
         id: 0,
         underlayingImage: `test`,
         linearGradient: 'linear-gradient(rgba(221, 19, 19, 0.5), rgba(245, 220, 164, 0.5))',
-        backgroundWallpaper: `${localModuleImports.backgroundImages[9].url}`
+        backgroundWallpaper: `${getSpecificImage(localModuleImports.backgroundImages, '/src/assets/images/backgroundWallpapers/Tztok-Jad.png').url}`
     },
     {
         id: 1,
-        underlayingImage: `url(${localModuleImports.changedUnderlayImages[0].url})`,
+        underlayingImage: `url(${getSpecificImage(localModuleImports.changedUnderlayImages, '/src/assets/images/colorUnderlayImages/ElysianSpiritShield.webp').url})`,
         linearGradient: 'linear-gradient(rgba(2, 38, 117, 0.5), rgba(156, 145, 145, 0.5))',
-        backgroundWallpaper: `${localModuleImports.backgroundImages[6].url}`
+        backgroundWallpaper: `${getSpecificImage(localModuleImports.backgroundImages, '/src/assets/images/backgroundWallpapers/Ariane.png').url}`
     },
     {
         id: 2,
-        underlayingImage: `url(${localModuleImports.changedUnderlayImages[1].url})`,
+        underlayingImage: `url(${getSpecificImage(localModuleImports.changedUnderlayImages, '/src/assets/images/colorUnderlayImages/TwistedBow.png').url})`,
         linearGradient: 'linear-gradient(rgba(145, 163, 18, 0.5), rgba(50, 46, 46, 0.5))',
-        backgroundWallpaper: `${localModuleImports.backgroundImages[4].url}`
+        backgroundWallpaper: `${getSpecificImage(localModuleImports.backgroundImages, '/src/assets/images/backgroundWallpapers/JungleDiscovery.jpg').url}`
     }
 ];
 

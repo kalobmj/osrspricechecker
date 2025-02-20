@@ -91,3 +91,5 @@ fix gaps between items in main container
             gameLogos does not do with. we need to keep its value in state
     styling and image fetch are mostly done.
         just need to work on sorting module imports, and working with api then project will mostly be done
+    possibly work on rotating border, but for main container
+    
