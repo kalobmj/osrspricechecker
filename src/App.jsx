@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import MainContainer from './components/MainContainer'
+import MainContainer from './components/organisms/MainContainer'
 import BottomImage from './components/atoms/BottomImage'
 import Footer from './components/molecules/Footer'
 import MainHeader from './components/molecules/MainHeader'

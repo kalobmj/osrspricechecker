@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import ArmadylGodsword from '../assets/images/underlayImages/ArmadylGodsword.webp'
+import ArmadylGodsword from '../../assets/images/underlayImages/ArmadylGodsword.webp'
+
+// most other components are mostly done, just need to finish this one. app.jsx is mostly done too
 
 export default function MainContainer({ underlayStyles, changeUnderlayBackground, prayer, swapPrayer }) {
 
@@ -41,7 +43,7 @@ export default function MainContainer({ underlayStyles, changeUnderlayBackground
     }, [])
 
     console.log('we are in mainContainer')
-    console.log({underlayStyles})
+    console.log({ underlayStyles })
 
     return (
         <div
