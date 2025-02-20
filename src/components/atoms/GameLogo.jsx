@@ -4,20 +4,12 @@ import * as localImportModules from '../../utils/moduleImports'
 
 // osrs main logo
 const GameLogo = () => {
-    const [gameLogo, setGameLogo] = useState('');
+    const [gameLogo, setGameLogo] = useState(getRandomImage(localImportModules.gameLogos));
 
     // function for handling gameLogo state change
     const handleLogoChange = () => {
-        // possbily check for last same image in util function or here
-        setGameLogo(getRandomImage(localImportModules.gameLogos))
+        setGameLogo(getRandomImage(localImportModules.gameLogos, gameLogo.id))
     };
-
-    // useEffect on first render to display gameLogo
-    useEffect(() => {
-        handleLogoChange();
-    }, []);
-
-    console.log('gamelogo url: ', gameLogo.url)
 
     return (
         <img

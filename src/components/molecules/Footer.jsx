@@ -3,13 +3,11 @@ import ColorwayButton from "../atoms/ColorwayButton";
 import { colorHandler } from "../../utils/colorHandler";
 
 export default function Footer({ changeUnderlayBackground, prayer, changePrayer }) {
-
     const buttonIndexArray = [0, 1, 2];
 
     const buttonElements = buttonIndexArray.map(buttonNumber => {
         if (buttonNumber === 0) {
             const ourButtonInfo = colorHandler(buttonNumber, prayer)
-            console.log({ourButtonInfo})
             const localHandler = () => {
                 changeUnderlayBackground(ourButtonInfo)
                 changePrayer();

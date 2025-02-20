@@ -4,25 +4,20 @@ import { getRandomImage } from '../../utils/imageLoader';
 import * as localImageModules from '../../utils/moduleImports'
 
 const BottomImage = () => {
-    const [bottomImage, setBottomImage] = useState({});
+    const [bottomImage, setBottomImage] = useState(getRandomImage(localImageModules.bottomImages));
 
     // function for handling url state change
     const handleImageChange = () => {
-        setBottomImage(getRandomImage(localImageModules.bottomImages))
+        setBottomImage(getRandomImage(localImageModules.bottomImages, bottomImage.id))
     };
-
-    // useEffect on first render to display randomImage
-    useEffect(() => {
-        handleImageChange();
-    }, []);
 
     return (
         <div className='bottom-image-container'>
             <img
-                className='bottom-image'
-                src={bottomImage.url} 
+                className={`bottom-image ${bottomImage.id}`}
+                src={bottomImage.url}
                 alt='bottom-img art-by-Soff(Chili)'
-                onClick={handleImageChange} 
+                onClick={handleImageChange}
             />
         </div>
     )

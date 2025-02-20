@@ -33,12 +33,12 @@ function App() {
       const newStyles = {
         ...prevUnderlayStyles,
         backgroundImage: `${colorScheme.url != undefined
-            ? `url(${colorScheme.url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`
-            : `${colorScheme.underlayingImage}, ${colorScheme.linearGradient}`
+          ? `url(${colorScheme.url}), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))`
+          : `${colorScheme.underlayingImage}, ${colorScheme.linearGradient}`
           }`,
         backgroundWallpaper: `${colorScheme.backgroundWallpaper != undefined
-            ? `${colorScheme.backgroundWallpaper}`
-            : 'empty'
+          ? `${colorScheme.backgroundWallpaper}`
+          : 'empty'
           }`
       }
       return newStyles
