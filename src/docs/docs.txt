@@ -92,4 +92,6 @@ fix gaps between items in main container
     styling and image fetch are mostly done.
         just need to work on sorting module imports, and working with api then project will mostly be done
     possibly work on rotating border, but for main container
+    [Violation] 'readystatechange' handler took 338ms
+        our page is using only synchronous functions. we can try to implement async functions that way our calls don't have to wait on each other. this will speed up our load times
     

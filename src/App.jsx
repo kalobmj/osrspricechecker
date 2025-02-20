@@ -22,13 +22,9 @@ function App() {
   // setState function for prayer
   const changePrayer = () => {
     swapPrayer(prevPrayer => prevPrayer === 0 ? 1 : 0)
-    console.log('prayer swapped')
   };
 
   const changeUnderlayBackground = (colorScheme) => {
-
-    console.log('color sheme', colorScheme)
-
     setUnderlayStyles((prevUnderlayStyles) => {
       const newStyles = {
         ...prevUnderlayStyles,
@@ -45,22 +41,15 @@ function App() {
     });
   };
 
-  // grabbing our landingWallpaper on first reload
-  const landingWallpaper = '../' + `${getRandomImage(localModuleImports.backgroundImages).url.slice(1)}`
-
-  console.log('landing wallpaper: ', `${getRandomImage(localModuleImports.backgroundImages).url.slice(1)}`)
-
   // useEffect to change backgroundWallpaper on first render
   useEffect(() => {
+    const landingWallpaper = '../' + `${getRandomImage(localModuleImports.backgroundImages).url.slice(1)}`
+
     document.body.style.backgroundImage = `url('${landingWallpaper}')`
   }, []);
 
+  // useEffect to change body backgroundImage whenever underlayStyles state changes
   useEffect(() => {
-    setTimeout(() => {
-      console.log('underlayStyles state updated')
-      console.log({ underlayStyles })
-      console.log(underlayStyles.backgroundWallpaper)
-    }, 500);
     if (underlayStyles.backgroundWallpaper != undefined) {
       document.body.style.backgroundImage = `url(${underlayStyles.backgroundWallpaper})`
     }
@@ -83,6 +72,6 @@ function App() {
       />
     </div>
   )
-}
+};
 
 export default App

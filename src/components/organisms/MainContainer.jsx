@@ -13,6 +13,12 @@ export default function MainContainer({ underlayStyles, changeUnderlayBackground
         'itemId': null
     });
 
+    useEffect(() => {
+        setTimeout(() => {
+            console.log('our data object: ', data)
+        }, 2000);
+    }, [data])
+
     const itemPriceData = 'https://oldschool.runescape.wiki/?title=Module:GEPrices/data.json&action=raw&ctype=application%2Fjson';
 
     const imagePriceData = '';
@@ -34,16 +40,14 @@ export default function MainContainer({ underlayStyles, changeUnderlayBackground
             fetch(itemPriceData)
                 .then(prices => prices.json())
                 .then(prices => {
-                    setData(prev => ({ ...prev, prices }))
+                    // setData(prev => ({ ...prev, prices }))
+                    setData(prevData => prevData.prices = prices)
                     localStorage.setItem('data', JSON.stringify(prices))
                     console.log('our prices data', prices)
                 })
                 .catch(err => console.error('this is the err', err))
         }
     }, [])
-
-    console.log('we are in mainContainer')
-    console.log({ underlayStyles })
 
     return (
         <div
@@ -60,7 +64,6 @@ export default function MainContainer({ underlayStyles, changeUnderlayBackground
                             {/* item price will change here */}
                             <h3 className='price'>284.4m</h3>
                         </div>
-
                     </div>
                     <div
                         className='item-display-underlay'
