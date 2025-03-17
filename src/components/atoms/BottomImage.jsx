@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { getRandomImage } from '../../utils/imageLoader';
 import * as localImageModules from '../../utils/moduleImports'
 
+// bottom img art
 const BottomImage = () => {
     const [bottomImage, setBottomImage] = useState(getRandomImage(localImageModules.bottomImages));
 

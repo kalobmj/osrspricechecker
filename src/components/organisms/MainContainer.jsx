@@ -4,12 +4,12 @@ import ArmadylGodsword from '../../assets/images/underlayImages/ArmadylGodsword.
 
 // most other components are mostly done, just need to finish this one. app.jsx is mostly done too
 
-export default function MainContainer({ underlayStyles, changeUnderlayBackground, prayer, swapPrayer }) {
+export default function MainContainer({ underlayStyles }) {
 
+    // state to store item information. triggers page re-render on each change
     const [data, setData] = useState({
-        'prices': null,
-        'images': null,
-        'descriptions': null,
+        'price': null,
+        'image': null,
         'itemId': null
     });
 
@@ -19,35 +19,10 @@ export default function MainContainer({ underlayStyles, changeUnderlayBackground
         }, 2000);
     }, [data])
 
-    const itemPriceData = 'https://oldschool.runescape.wiki/?title=Module:GEPrices/data.json&action=raw&ctype=application%2Fjson';
-
-    const imagePriceData = '';
-
-    const descriptPriceData = '';
-
-    const itemId = '';
-
-    // useEffect for getting data about items
-    // got item prices, need : images, descriptions, itemid
-    useEffect(() => {
-        const storedData = localStorage.getItem('data');
-        if (storedData) {
-            const parsedData = JSON.parse(storedData)
-            setData(JSON.parse(storedData))
-            console.log('loaded data from localStorage', parsedData)
-        } else {
-            console.log('Calling the API...')
-            fetch(itemPriceData)
-                .then(prices => prices.json())
-                .then(prices => {
-                    // setData(prev => ({ ...prev, prices }))
-                    setData(prevData => prevData.prices = prices)
-                    localStorage.setItem('data', JSON.stringify(prices))
-                    console.log('our prices data', prices)
-                })
-                .catch(err => console.error('this is the err', err))
-        }
-    }, [])
+    // need to handle user typing in the item. searching it
+    // possibly have user when typing updates state. take that first letter and do a search query for a list of the items matching that first letter. then have the first 10 items appear in a drop list in the search bar. 
+    // once user clicks 'search', uppercase first word so the api call will work.
+    // once the search is performed, the api call will be made and the state object will update, causing a re-render and updating our page.
 
     return (
         <div
