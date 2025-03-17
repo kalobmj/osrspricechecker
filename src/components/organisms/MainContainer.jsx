@@ -24,6 +24,45 @@ export default function MainContainer({ underlayStyles }) {
     // once user clicks 'search', uppercase first word so the api call will work.
     // once the search is performed, the api call will be made and the state object will update, causing a re-render and updating our page.
 
+    const fetchItemData = async (searchTerm) => {
+
+        console.log(`begin test fetch using searchTerm: ${searchTerm}`)
+
+        console.log(searchTerm)
+
+        const regex = /\s/gi;
+        const searchStr = searchTerm.replaceAll(regex, '%20');
+        console.log(searchStr);
+
+        const baseURL = 'https://api.weirdgloop.org/exchange/history/osrs/latest?name=';
+
+        console.log(`${baseURL}${searchStr}`)
+
+        try {
+            const res = await fetch(`${baseURL}${searchStr}`);
+            if (!res.ok) {
+                throw new Error(`Error calling API using ${searchStr} search term`)
+            };
+            const data = await res.json();
+            console.log({data})
+            const itemData = data[searchTerm];
+            console.log({itemData})
+            console.log('This is our id data: ', itemData.id);
+            console.log('This is our timestamp data: ', itemData.timestamp);
+            console.log('This is our price data: ', itemData.price);
+            console.log('This is our volume data: ', itemData.volume);
+            console.log(`Here is your requested Data for the item: ${searchTerm}`, itemData);
+            // resDisplay.innerText = JSON.stringify(itemData);
+        } catch(err) {
+            console.error(err)
+        }
+
+        console.log(`Done fetching data using searchTerm: ${searchTerm}`)
+
+    };
+
+    fetchItemData('Abyssal whip'); // testing our function
+
     return (
         <div
             className='main-container-underlay'
