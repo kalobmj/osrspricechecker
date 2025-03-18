@@ -99,3 +99,6 @@ fix gaps between items in main container
     need to set up api calls. have all the urls and some code to draw from on our other repo.
         probably need to have a search function for new users who don't know item names.
             also possibly a default list of high valued items.
+
+3/18
+    got item api calls, just need to flesh them out, store the data in our state and apply the values to our main container
